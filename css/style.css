@@ -1,0 +1,268 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.nav-up {
+    top: -75px;
+}
+
+/* Responsive Navigation */
+
+.responsive-nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 80px;
+  background: rgb(115,169,238);
+  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  display: inline-block;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.navbar-nav {
+  margin: 0;
+  border: none;
+}
+
+#main-nav ul {
+  text-align: center;
+  background: rgb(115,169,238);
+  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+  margin-top: 59px;
+  width: 100%;
+}
+#main-nav ul li {
+  margin: 15px 0px;
+}
+#main-nav ul li:hover {
+  background-color: transparent;
+}
+#main-nav ul li a {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+}
+
+#main-nav ul li a:hover {
+  opacity: 0.5;
+  background-color: transparent;
+}
+
+.navbar-toggle span {
+  background-color: #232323;
+}
+
+
+/* Sidebar Style */
+
+.sidebar-navigation {
+  width: 22.5%;
+  float: left;
+  height: 100%;
+  position: fixed;
+  background: rgb(115,169,238);
+  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+  z-index: 10;
+}
+
+
+.sidebar-navigation nav {
+  position: relative;
+  top: 60%;
+  left: 60%;
+  -webkit-transform: translateX(-60%) translateY(-60%);
+  -moz-transform: translateX(-60%) translateY(-60%);
+  -ms-transform: translateX(-60%) translateY(-60%);
+  -o-transform: translateX(-60%) translateY(-60%);
+  transform: translateX(-60%) translateY(-60%);
+}
+
+.sidebar-navigation ul {
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style: none;
+  padding: 40px;
+}
+.sidebar-navigation li{
+  text-align: center;
+  /*padding: 15px;*/
+  
+}
+.sidebar-navigation span{
+  display: inline-block;
+  position:relative;
+}
+.sidebar-navigation nav a{
+  display: block;
+  padding: 10px;
+  color: #fff;
+  margin-top: 5px;
+  text-decoration: none!important;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  
+}
+
+.sidebar-navigation nav a:hover{
+  background-color: #414358;
+  border-radius: 4px;  
+}
+
+.user-photo {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.user-photo img {
+  width: 200px;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 25px 50px 25px 350px;
+}
+
+.title-page {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.title-page h3 {
+  color: #606060;
+}
+
+.title-page span {
+  color: #606060;
+}
+
+.logo-vp img {
+  margin-top: 20px;
+  width: 60px;
+}
+
+.line-title {
+  height: 2px;
+  border-radius: 1px;
+  background-color: rgb(224,222,222);
+  margin-top: 5px;
+}
+
+.btn-add {
+  margin-top: 15px;
+  
+}
+
+.btn-add a {
+  display: block;
+  padding: 6px;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: small;  
+  background-color: #606060;
+}
+
+.btn-add a:hover{
+  background-color: #4a4a4a;
+}
+
+.type-list{
+  padding: 5px;
+  float: right;
+  margin-top: 10px;  
+}
+
+.type-list i{
+  margin-left: 5px;  
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.tb {
+  margin-top: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+  text-align: center;
+  padding: 3px 3px 3px 200px;
+}
+
+/* Responsive Style */
+
+/* Mobile */
+@media (max-width: 992px) {
+  .content {          
+    width: 100%;
+    height: 100%;    
+    padding: 60px 10px 15px 10px;
+  }
+  .title-page {
+    margin: 0;
+  }
+
+  .logo-vp img{
+    margin-top: 10px;
+    width: 50px;
+  }
+  .table-responsive {
+    margin-top: 10px;
+  }
+  .responsive-nav {
+    display: none;
+    height: 200px;
+    background-color: #232323;
+  }
+
+  .sidebar-navigation nav a {
+    font-size: 13px;
+  }
+
+  .sidebar-navigation nav ul {
+    margin-left: 30px;
+  }  
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0px;
+    font-size: small;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .responsive-nav {
+    display: block;
+    height: 60px;
+  }
+  
+}
+
+
+
+

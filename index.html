@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Virtual PBX</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/virtual-pbx.ico">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.21/r-2.2.5/datatables.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/jquery-1.11.2.js"></script>
+        <script src="js/vendor/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.21/r-2.2.5/datatables.min.js"></script>
+    </head>
+<body>
+
+    <header class="nav-down responsive-nav hidden-lg hidden-md">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!--navbar-header-->
+        <div id="main-nav" class="collapse navbar-collapse">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">MANAGE PBX</a></li>
+                    <li><a href="#">CALL LOG</a></li>
+                    <li><a href="#">WALLET</a></li>
+                    <li><a href="#">LOG OUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="sidebar-navigation hidde-sm hidden-xs">
+        
+        <nav>
+            <div class="user-photo">
+                <img src="img/user.png" alt="">
+                <h3>Hello, Admin!!</h3>
+                <h5>Wallet : 50.000</h4>
+            </div>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa fa-list-alt" style="margin-right: 5px;"></i>MANAGE PBX</a>
+                    <div style="height: 1px;width: auto;background-color: #00000017; margin-bottom: 5px;"></div>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-phone-square" style="margin-right: 5px;"></i>CALL LOG</a>
+                    <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-credit-card-alt" style="margin-right: 5px;"></i>WALLET</a>
+                    <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sign-out" style="margin-right: 5px;"></i>LOG OUT</a>
+                    <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-xs-7">
+                    <div class="title-page">
+                        <h3>Manage PBX</h3><span>list PBX</span></div>
+                </div>
+                <div class="col-md-2 col-md-offset-6 col-xs-5">
+                    <div class="logo-vp">
+                        <img src="img/virtual-pbx.png">
+                        <img src="img/telkom-indonesia.png">
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="line-title"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-xs-12">
+                    <div class="btn-add">
+                        <a type="button" data-toggle="modal" data-target="#myModal">ADD NEW PBX</a>                        
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-8 col-xs-12">
+                    <div class="type-list">
+                        <i class="fa fa-list fa-lg"></i>
+                        <i class="fa fa-th-large fa-lg"></i>
+                    </div>
+                    
+                </div>
+                <!-- Isi -->
+                <div class="col-md-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table id="tb" class="table table-striped table-bordered" >
+                            <thead>
+                                <tr>
+                                    <th>PBX Name</th>
+                                    <th>Location</th>
+                                    <th>Extension</th>
+                                    <th>IP Address</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>PBX Segara</td>
+                                    <td>Regional 1 - BDG</td>
+                                    <td>10</td>
+                                    <td>10.30.40.1</td>
+                                    <td>Accepted</td>
+                                    <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>        
+    </div>
+    <footer class="footer">
+        <span>Copyright © 2020 Telkom - Divisi Digital Business</span>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New PBX</h4>
+                <span>Request</span>
+            </div>
+            <div class="modal-body">
+                <p>This is a large modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+     
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#tb').DataTable();
+        } );
+    </script>
+    
+
+</body>
+</html>

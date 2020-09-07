@@ -1,0 +1,115 @@
+body {
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-page img {
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.title-page {
+  padding: 15px 0px 6px 10px;
+  margin-top: 60px;
+}
+
+.title-page-img {
+  display: block;
+  width: 500px;
+  height: 175px;
+  margin: auto;
+}
+
+.title-page h6 {
+  text-align: center;
+  color: #424141;
+  font-size: small;
+}
+
+.title-page h4 {
+  margin-top: 50px;
+  text-align: center;
+  color: #424141;
+}
+
+.title-page h3 {
+  text-align: center;
+  color: #424141;
+}
+.sign-google {
+  margin-right: -15px;
+  height: 768px;
+  padding: 30px;
+  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+}
+
+.sign-google span {
+  margin-top: 300px;
+  text-align: center;
+  display: block;
+  color: white;
+}
+
+.sign-google a img {
+  width: 18px;
+  float: left;
+  margin-right: 5px;
+}
+
+.sign-google a {
+  text-align: center;
+  margin: auto;
+  margin-top: 25px;
+  display: block;
+  padding: 10px;
+  width: 200px;
+  border-radius: 6px;
+  color: #777777;
+  background: white;
+  text-decoration: none;
+  
+}
+
+.sign-google a:hover {
+  background: rgb(248,248,248);
+}
+
+
+/* Responsive Style */
+
+/* Mobile */
+@media (max-width: 992px) {
+  .title-page {
+    margin-bottom: 30px;
+  }
+  .title-page h3 {
+    font-size: xx-large;
+  }
+  .title-page h4 {
+    font-size: x-large;
+  }
+  .title-page h6 {
+    font-size: large;
+  }
+  .sign-google {     
+    margin-left: -15px;  
+    padding: 50px;    
+    
+  }
+  .sign-google span {
+    font-size: x-large;
+    margin-top: 50px;    
+  }
+  
+  .sign-google a {
+    font-size: x-large;
+    width: 280px;
+  }
+  .sign-google a img {
+    width: 20px;
+    float: left;
+    margin-right: 5px;
+  }
+}
