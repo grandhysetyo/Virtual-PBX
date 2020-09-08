@@ -111,7 +111,45 @@
                 </div>
                 <!-- Isi -->
                 <div class="col-md-12 col-xs-12">
-
+                    <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="carousel-col">
+                                    <div class="block red img-responsive"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-col">
+                                    <div class="block green img-responsive"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-col">
+                                    <div class="block blue img-responsive"></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-col">
+                                    <div class="block yellow img-responsive"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Controls -->
+                        <div class="left carousel-control">
+                            <a href="#carousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </div>
+                        <div class="right carousel-control">
+                            <a href="#carousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+        
                 </div>
             </div>
         </div>
@@ -142,10 +180,10 @@
 </div>
  
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 
 <script>
     // Hide Header on on scroll down
@@ -188,11 +226,22 @@
     }
 </script>
 <script>
-    $(document).ready(function() {
-        $('#tb').DataTable();
-    } );
+    $('.carousel[data-type="multi"] .item').each(function() {
+	var next = $(this).next();
+	if (!next.length) {
+		next = $(this).siblings(':first');
+	}
+	next.children(':first-child').clone().appendTo($(this));
+
+	for (var i = 0; i < 2; i++) {
+		next = next.next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+
+		next.children(':first-child').clone().appendTo($(this));
+	}
+});
 </script>
-
-
 </body>
 </html>
