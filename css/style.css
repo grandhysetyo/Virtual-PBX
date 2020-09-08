@@ -161,6 +161,8 @@ body {
   border-radius: 1px;
   background-color: rgb(224,222,222);
   margin-top: 5px;
+
+  margin-left: 10px;
 }
 
 .btn-add {
@@ -350,3 +352,7 @@ height: 230px;
 
 .yellow {background: yellow;}
 
+.satu {
+  position: relative;
+  top: 19px;
+}
