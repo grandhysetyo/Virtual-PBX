@@ -429,13 +429,11 @@ body {
 
 
 .form-call-log {
-  position: relative;
-  top: 19px;
+  margin-top: 15px;
 }
 
 .form-detail-pbx {
-  position: relative;
-  top: 9px;
+  margin-top: 15px;
 }
 
 .form-detail-pbx i {
