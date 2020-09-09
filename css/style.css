@@ -98,9 +98,7 @@ body {
   padding: 40px;
 }
 .sidebar-navigation li{
-  text-align: center;
-  /*padding: 15px;*/
-  
+  text-align: center; 
 }
 .sidebar-navigation span{
   display: inline-block;
@@ -161,7 +159,6 @@ body {
   border-radius: 1px;
   background-color: rgb(224,222,222);
   margin-top: 5px;
-
   margin-left: 10px;
 }
 
