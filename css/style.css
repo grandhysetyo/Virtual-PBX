@@ -428,12 +428,16 @@ body {
 }
 
 
-.satu {
+.form-call-log {
   position: relative;
   top: 19px;
 }
 
-.dua {
+.form-detail-pbx {
   position: relative;
   top: 9px;
+}
+
+.form-detail-pbx i {
+  margin-right: 6px;
 }
