@@ -185,6 +185,27 @@ body {
   background-color: #4a4a4a;
 }
 
+.btn-wallet {
+  margin-top: 1px;
+  margin-bottom: 20px;
+  
+}
+
+.btn-wallet a {
+  display: block;
+  padding: 6px;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: small;  
+  background-color: #606060;
+}
+
+.btn-wallet a:hover{
+  background-color: #4a4a4a;
+}
+
 .type-list{
   padding: 5px;
   float: right;
@@ -254,6 +275,9 @@ body {
     font-size: small;
   }
 
+  .table-responsive h4{
+    text-align: center;
+  }
 
 
 }
