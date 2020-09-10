@@ -130,6 +130,17 @@ body {
 .user-photo img {
   width: 200px;
 }
+
+.user-photo-mobile {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.user-photo-mobile img{
+  width: 100px;
+}
+
 .content {
   width: 100%;
   height: 100%;
@@ -275,7 +286,7 @@ body {
   .table-responsive h4{
     text-align: center;
   }
-
+  
 
 }
 
