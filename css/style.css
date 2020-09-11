@@ -333,12 +333,12 @@ body {
 
 .block {
   width: 306px;
-  height: 395px;
+  height: 420px;
   background-color: white;
-  border-style: solid;
   border-radius: 20px;
   border-color: #D1D1D1;
   padding: 10px 10px 15px 22px;
+  box-shadow: 0px 5px 7px rgba(0,0,0,0.2);
 }
 
 .block a {
@@ -371,6 +371,11 @@ body {
   text-align: center;
 }
 
+.status {
+  margin-top: 10px;
+  font-size: medium;
+}
+
 .active > div { display:none; }
 .active > div:first-child { display:block; }
 
@@ -386,7 +391,7 @@ body {
   margin-top: 30px;
 }
 .block {
-  height: 280px;
+  height: 300px;
 }
 .block a {
   width: 25px;
@@ -401,6 +406,9 @@ body {
   font-size: small;
 }
 .block span {
+  font-size: small;
+}
+.status {
   font-size: small;
 }
 }
@@ -449,4 +457,10 @@ body {
 
 .form-detail-pbx i {
   margin-right: 6px;
+}
+
+.icon-print a{
+  display: block;
+  float: right;
+  margin-left: 10px;
 }
