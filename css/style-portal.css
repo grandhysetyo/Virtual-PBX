@@ -1,7 +1,9 @@
 body {
+  font-family: 'Open Sans', sans-serif;
   display: table;
   width: 100%;
   overflow: hidden;
+  
 }
 
 .logo-page img {
@@ -21,23 +23,23 @@ body {
   height: 175px;
   margin: auto;
 }
-
-.title-page h6 {
-  text-align: center;
-  color: #424141;
-  font-size: small;
-}
-
-.title-page h4 {
-  margin-top: 50px;
-  text-align: center;
-  color: #424141;
-}
-
 .title-page h3 {
   text-align: center;
   color: #424141;
 }
+.title-page h4 {
+  margin-top: 50px;
+  text-align: center;
+  color: #424141;
+  font-family: sans-serif;
+}
+.title-page h6 {
+  text-align: center;
+  color: #888888;
+  font-size: small;
+  font-family: sans-serif;
+}
+
 .sign-google {
   margin-right: -15px;
   height: 768px;
@@ -80,7 +82,7 @@ body {
 /* Responsive Style */
 
 /* Mobile */
-@media (max-width: 992px) {
+@media(max-width: 991px) {
   .title-page {
     margin-bottom: 30px;
   }
