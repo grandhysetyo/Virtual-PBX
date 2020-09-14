@@ -232,6 +232,23 @@ body {
   margin-top: 20px;
 }
 
+.form-call-log {
+  margin-top: 15px;
+}
+
+.form-detail-pbx {
+  margin-top: 15px;
+}
+
+.form-detail-pbx i {
+  margin-right: 6px;
+}
+
+.icon-print a{
+  display: block;
+  float: right;
+  margin-left: 10px;
+}
 .footer {
   position: fixed;
   bottom: 0;
@@ -242,62 +259,7 @@ body {
   padding: 3px 3px 3px 200px;
 }
 
-/* Responsive Style */
 
-/* Mobile */
-@media (max-width: 992px) {
-  .content {          
-    width: 100%;
-    height: 100%;    
-    padding: 60px 10px 15px 10px;
-  }
-  .title-page {
-    margin: 0;
-  }
-
-  .logo-vp img{
-    margin-top: 10px;
-    width: 50px;
-  }
-  .table-responsive {
-    margin-top: 10px;
-  }
-  .responsive-nav {
-    display: none;
-    height: 200px;
-    background-color: #232323;
-  }
-
-  .sidebar-navigation nav a {
-    font-size: 13px;
-  }
-
-  .sidebar-navigation nav ul {
-    margin-left: 30px;
-  }  
-
-  .footer {
-    position: fixed;
-    bottom: 0;
-    padding: 0px;
-    font-size: small;
-  }
-
-  .table-responsive h4{
-    text-align: center;
-  }
-  
-
-}
-
-@media (max-width: 767px) {
-
-  .responsive-nav {
-    display: block;
-    height: 60px;
-  }
-  
-}
 
 /* Carosel List PBX Icon */
 .carousel {
@@ -387,6 +349,10 @@ body {
 .carousel-inner .prev		     { left: -50%; }
 .carousel-col                { width: 50%; }
 .active > div:first-child + div { display:block; }
+.responsive-nav {
+  display: block;
+  height: 60px;
+}
 .carousel {
   margin-top: 30px;
 }
@@ -411,6 +377,10 @@ body {
 .status {
   font-size: small;
 }
+.responsive-nav {
+    display: block;
+    height: 60px;
+  }
 }
 
 /*sm*/
@@ -421,6 +391,46 @@ body {
 .carousel-inner .prev		     { left: -50%; }
 .carousel-col                { width: 50%; }
 .active > div:first-child + div { display:block; }
+.content {          
+  width: 100%;
+  height: 100%;    
+  padding: 60px 10px 15px 10px;
+}
+.title-page {
+  margin: 0;
+}
+
+.logo-vp img{
+  margin-top: 10px;
+  width: 50px;
+}
+.table-responsive {
+  margin-top: 10px;
+}
+.responsive-nav {
+  display: none;
+  height: 200px;
+  background-color: #232323;
+}
+
+.sidebar-navigation nav a {
+  font-size: 13px;
+}
+
+.sidebar-navigation nav ul {
+  margin-left: 30px;
+}  
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: 0px;
+  font-size: small;
+}
+
+.table-responsive h4{
+  text-align: center;
+}
 }
 
 /*md*/
@@ -446,21 +456,3 @@ body {
 .active > div:first-child + div + div + div { display:block; }
 }
 
-
-.form-call-log {
-  margin-top: 15px;
-}
-
-.form-detail-pbx {
-  margin-top: 15px;
-}
-
-.form-detail-pbx i {
-  margin-right: 6px;
-}
-
-.icon-print a{
-  display: block;
-  float: right;
-  margin-left: 10px;
-}
