@@ -1,9 +1,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  display: table;
+  /* display: table; */
   width: 100%;
   overflow: hidden;
-  
 }
 
 .logo-page img {
@@ -82,32 +81,45 @@ body {
 /* Responsive Style */
 
 /* Mobile */
-@media(max-width: 991px) {
+@media(max-width: 992px) {
+  body {
+    overflow: auto;
+    
+  }
+  .logo-page img {
+    height: 40px;
+  }
   .title-page {
+    margin-top: 20px;
     margin-bottom: 30px;
   }
+  .title-page-img {
+    width: 300px;
+    height: 120px;
+  }
   .title-page h3 {
-    font-size: xx-large;
+    font-size: large;
   }
   .title-page h4 {
-    font-size: x-large;
+    margin-top: 25px;
+    font-size: medium;
   }
   .title-page h6 {
-    font-size: large;
+    font-size: small;
+    padding: 0px 25px 0px 25px;
   }
   .sign-google {     
     margin-left: -15px;  
-    padding: 50px;    
-    
+    padding: 40px;   
+    height: 300px;     
   }
   .sign-google span {
-    font-size: x-large;
-    margin-top: 50px;    
+    font-size: small;
+    margin: auto;    
   }
-  
   .sign-google a {
-    font-size: x-large;
-    width: 280px;
+    font-size: small;
+    padding: 15px;
   }
   .sign-google a img {
     width: 20px;
