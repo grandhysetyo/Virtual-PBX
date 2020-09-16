@@ -25,7 +25,7 @@ class Index {
 			}
 			else {
 				this.storage.save(Constant.STORAGE_KEY_USER_TYPE, Constant.USER_TYPE_NONADMIN);
-				GLOBAL.moveWindowTo("user_pbx.html");
+				GLOBAL.moveWindowTo("pbx.html");
 			}
 		}
 		$("#id-sign-in").show();
