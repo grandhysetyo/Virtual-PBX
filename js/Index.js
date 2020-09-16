@@ -21,7 +21,7 @@ class Index {
 			this.storage.save(Constant.STORAGE_KEY_USER_TOKEN, token);
 			if (isAdmin) {
 				this.storage.save(Constant.STORAGE_KEY_USER_TYPE, Constant.USER_TYPE_ADMIN);
-				GLOBAL.moveWindowTo("admin_pbx.html");
+				GLOBAL.moveWindowTo("pbx.html");
 			}
 			else {
 				this.storage.save(Constant.STORAGE_KEY_USER_TYPE, Constant.USER_TYPE_NONADMIN);
