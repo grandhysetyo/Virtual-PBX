@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Virtual PBX</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="img/virtual-pbx.ico">
 
-        <!-- Boostrap 3.3 -->
-        <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="dist/css/datatables.min.css"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Virtual PBX</title>
 
-        <!-- Style -->
-        <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/virtual-pbx.ico">
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Boostrap 3.3 -->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/datatables.min.css" />
 
-        <!-- JS -->
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="js/vendor/jquery-1.11.2.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
 
-        <script src="dist/js/dataTables.bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/vendor/datatables.min.js"></script>
-    </head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JS -->
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/vendor/jquery-1.11.2.js"></script>
+
+    <script src="dist/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vendor/datatables.min.js"></script>
+    <!-- Datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+
 <body>
 
     <header class="nav-down responsive-nav hidden-lg hidden-md">
@@ -40,17 +46,28 @@
         <div id="main-nav" class="collapse navbar-collapse">
             <nav>
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">MANAGE PBX</a></li>
-                    <li><a href="call-log.html">CALL LOG</a></li>
-                    <li><a href="#">WALLET</a></li>
-                    <li><a href="#">LOG OUT</a></li>
+                    <li>
+                        <div class="user-photo-mobile">
+                            <img src="img/user.png" alt="">
+                            <h3>Hello, Admin!!</h3>
+                            <h5>Wallet : 50.000</h4>
+                        </div>
+                    </li>
+                    <li><a href="index.html"><i class="fa fa-list-alt" style="margin-right: 5px;"></i>MANAGE PBX</a>
+                    </li>
+                    <li><a href="call-log.html"><i class="fa fa-phone-square" style="margin-right: 5px;"></i>CALL
+                            LOG</a></li>
+                    <li><a href="wallet.html"><i class="fa fa-credit-card-alt" style="margin-right: 5px;"></i>WALLET</a>
+                    </li>
+                    <li><a data-toggle="modal" data-target="#logout"><i class="fa fa-sign-out"
+                                style="margin-right: 5px;"></i>LOG OUT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="sidebar-navigation hidde-sm hidden-xs">
-        
+
         <nav>
             <div class="user-photo">
                 <img src="img/user.png" alt="">
@@ -67,11 +84,12 @@
                     <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-credit-card-alt" style="margin-right: 5px;"></i>WALLET</a>
+                    <a href="wallet.html"><i class="fa fa-credit-card-alt" style="margin-right: 5px;"></i>WALLET</a>
                     <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sign-out" style="margin-right: 5px;"></i>LOG OUT</a>
+                    <a data-toggle="modal" data-target="#logout"><i class="fa fa-sign-out"
+                            style="margin-right: 5px;"></i>LOG OUT</a>
                     <div style="height: 1px;width: auto;background-color: #00000017;margin-bottom: 5px;"></div>
                 </li>
             </ul>
@@ -83,7 +101,8 @@
             <div class="row">
                 <div class="col-md-4 col-xs-7">
                     <div class="title-page">
-                        <h3>VIRTUAL PBX</h3><span>CALL LOG</span></div>
+                        <h3>CALL LOG</h3>
+                    </div>
                 </div>
                 <div class="col-md-2 col-md-offset-6 col-xs-5">
                     <div class="logo-vp">
@@ -95,265 +114,296 @@
                     <div class="line-title"></div>
                 </div>
             </div>
-            <div class="satu">
-                <form>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">PBX Name</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>PBX SEGARA</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-3">
-                        <label for="inputCity">No. Extension</label>
-                        <input type="text" class="form-control" id="inputCity">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="inputState">Status</label>
-                        <select id="inputState" class="form-control">
-                          <option selected></option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-2"><br>
-                        <button type="submit" class="btn btn-primary btn-block">Show</button>
-                      </div>
-                    </div>
-                  </form>
-            </div>
-                <!-- Isi -->
+            <div class="row">
                 <div class="col-md-12 col-xs-12">
-                    <div class="table-responsive">
-                        <table id="tb" class="table table-striped table-bordered" >
-                            <thead>
-                                <tr>
-                                    <th>Date/Time</th>
-                                    <th>Caller ID</th>
-                                    <th>Receiver ID</th>
-                                    <th>Duration</th>
-                                    <th>Billing (Rp)</th>
-                                    <th>Status</th>
-                                    <th>Information</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 02/02/20</td>
-                                    <td>200</td>
-                                    <td>200</td>
-                                    <td>40s</td>
-                                    <td>0.5</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 03/02/20</td>
-                                    <td>150</td>
-                                    <td>150</td>
-                                    <td>30s</td>
-                                    <td>0.7</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 25/02/20</td>
-                                    <td>200</td>
-                                    <td>200</td>
-                                    <td>35s</td>
-                                    <td>1.0</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>700</td>
-                                    <td>700</td>
-                                    <td>60s</td>
-                                    <td>1.5</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>200</td>
-                                    <td>200</td>
-                                    <td>50s</td>
-                                    <td>2.0</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>200</td>
-                                    <td>200</td>
-                                    <td>50s</td>
-                                    <td>2.0</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>200</td>
-                                    <td>200</td>
-                                    <td>50s</td>
-                                    <td>2.0</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 03/02/20</td>
-                                    <td>150</td>
-                                    <td>150</td>
-                                    <td>30s</td>
-                                    <td>0.7</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 03/02/20</td>
-                                    <td>150</td>
-                                    <td>150</td>
-                                    <td>30s</td>
-                                    <td>0.7</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>10s</td>
-                                    <td>0.2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>700</td>
-                                    <td>700</td>
-                                    <td>60s</td>
-                                    <td>1.5</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>01:11 - 01/02/20</td>
-                                    <td>700</td>
-                                    <td>700</td>
-                                    <td>60s</td>
-                                    <td>1.5</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <form class="form-call-log">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputState">PBX Name</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>PBX SEGARA</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="inputCity">No. Extension</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputState">Status</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected></option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="datesRange">Tanggal</label>
+                                <input id="datesRange" name="datesRange" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-2"><br>
+                                <button type="submit" class="btn btn-primary btn-block">Show</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Isi -->
+                    <div class="col-md-12 col-xs-12">
+                        <div class="icon-print">
+                            <a href=""><i class="fa fa-print fa-lg" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="tb" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date/Time</th>
+                                        <th>Caller ID</th>
+                                        <th>Receiver ID</th>
+                                        <th>Duration</th>
+                                        <th>Billing (Rp)</th>
+                                        <th>Status</th>
+                                        <th>Information</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 02/02/20</td>
+                                        <td>200</td>
+                                        <td>200</td>
+                                        <td>40s</td>
+                                        <td>0.5</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 03/02/20</td>
+                                        <td>150</td>
+                                        <td>150</td>
+                                        <td>30s</td>
+                                        <td>0.7</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 25/02/20</td>
+                                        <td>200</td>
+                                        <td>200</td>
+                                        <td>35s</td>
+                                        <td>1.0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>700</td>
+                                        <td>700</td>
+                                        <td>60s</td>
+                                        <td>1.5</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>200</td>
+                                        <td>200</td>
+                                        <td>50s</td>
+                                        <td>2.0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>200</td>
+                                        <td>200</td>
+                                        <td>50s</td>
+                                        <td>2.0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>200</td>
+                                        <td>200</td>
+                                        <td>50s</td>
+                                        <td>2.0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 03/02/20</td>
+                                        <td>150</td>
+                                        <td>150</td>
+                                        <td>30s</td>
+                                        <td>0.7</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 03/02/20</td>
+                                        <td>150</td>
+                                        <td>150</td>
+                                        <td>30s</td>
+                                        <td>0.7</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>10s</td>
+                                        <td>0.2</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>700</td>
+                                        <td>700</td>
+                                        <td>60s</td>
+                                        <td>1.5</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01:11 - 01/02/20</td>
+                                        <td>700</td>
+                                        <td>700</td>
+                                        <td>60s</td>
+                                        <td>1.5</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-
-        </div>        
+        </div>
     </div>
     <footer class="footer">
-        <span>Copyright © 2020 Telkom - Divisi Digital Business</span>
+        <span>Copyright © 2020 Telkom - Direktorat Digital Business</span>
     </footer>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">New PBX</h4>
-                <span>Request</span>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New PBX</h4>
+                    <span>Request</span>
+                </div>
+                <div class="modal-body">
+                    <p>This is a large modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>This is a large modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
         </div>
     </div>
-     
-    
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+
+    <div class="modal fade" id="logout" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Logout</h4>
+                    <span>Virtual PBX</span>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah anda yakin?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')
+    </script>
     <script src="dist/js/bootstrap.min.js"></script>
-    
+
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
@@ -364,11 +414,11 @@
         var delta = 5;
         var navbarHeight = $('header').outerHeight();
 
-        $(window).scroll(function(event){
+        $(window).scroll(function (event) {
             didScroll = true;
         });
 
-        setInterval(function() {
+        setInterval(function () {
             if (didScroll) {
                 hasScrolled();
                 didScroll = false;
@@ -377,37 +427,40 @@
 
         function hasScrolled() {
             var st = $(this).scrollTop();
-            
+
             // Make sure they scroll more than delta
-            if(Math.abs(lastScrollTop - st) <= delta)
+            if (Math.abs(lastScrollTop - st) <= delta)
                 return;
-            
+
             // If they scrolled down and are past the navbar, add class .nav-up.
             // This is necessary so you never see what is "behind" the navbar.
-            if (st > lastScrollTop && st > navbarHeight){
+            if (st > lastScrollTop && st > navbarHeight) {
                 // Scroll Down
                 $('header').removeClass('nav-down').addClass('nav-up');
             } else {
                 // Scroll Up
-                if(st + $(window).height() < $(document).height()) {
+                if (st + $(window).height() < $(document).height()) {
                     $('header').removeClass('nav-up').addClass('nav-down');
                 }
             }
-            
+
             lastScrollTop = st;
         }
     </script>
     <script>
-        $(document).ready(function() {
-            $('#tb').DataTable( {
-            "paging":   true,
-            "searching": false,
-            "lengthChange": false,
-            } );
-        } );
-        
+        $(document).ready(function () {
+            $('#tb').DataTable({
+                "paging": true,
+                "searching": false,
+                "lengthChange": false,
+            });
+        });
     </script>
-    
+    <script>
+        $('input[name="datesRange"]').daterangepicker();
+    </script>
+
 
 </body>
+
 </html>

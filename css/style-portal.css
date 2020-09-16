@@ -1,5 +1,6 @@
 body {
-  display: table;
+  font-family: 'Open Sans', sans-serif;
+  /* display: table; */
   width: 100%;
   overflow: hidden;
 }
@@ -22,27 +23,30 @@ body {
   margin: auto;
 }
 
-.title-page h6 {
+.title-page h3 {
   text-align: center;
   color: #424141;
-  font-size: small;
 }
 
 .title-page h4 {
   margin-top: 50px;
   text-align: center;
   color: #424141;
+  font-family: sans-serif;
 }
 
-.title-page h3 {
+.title-page h6 {
   text-align: center;
-  color: #424141;
+  color: #888888;
+  font-size: small;
+  font-family: sans-serif;
 }
+
 .sign-google {
   margin-right: -15px;
   height: 768px;
   padding: 30px;
-  background: linear-gradient(90deg, rgba(115,169,238,1) 33%, rgba(88,142,212,1) 100%);
+  background: linear-gradient(90deg, rgba(115, 169, 238, 1) 33%, rgba(88, 142, 212, 1) 100%);
 }
 
 .sign-google span {
@@ -69,44 +73,67 @@ body {
   color: #777777;
   background: white;
   text-decoration: none;
-  
+
 }
 
 .sign-google a:hover {
-  background: rgb(248,248,248);
+  background: rgb(248, 248, 248);
 }
 
 
 /* Responsive Style */
 
 /* Mobile */
-@media (max-width: 992px) {
+@media(max-width: 992px) {
+  body {
+    overflow: auto;
+
+  }
+
+  .logo-page img {
+    height: 40px;
+  }
+
   .title-page {
+    margin-top: 20px;
     margin-bottom: 30px;
   }
+
+  .title-page-img {
+    width: 300px;
+    height: 120px;
+  }
+
   .title-page h3 {
-    font-size: xx-large;
-  }
-  .title-page h4 {
-    font-size: x-large;
-  }
-  .title-page h6 {
     font-size: large;
   }
-  .sign-google {     
-    margin-left: -15px;  
-    padding: 50px;    
-    
+
+  .title-page h4 {
+    margin-top: 25px;
+    font-size: medium;
   }
+
+  .title-page h6 {
+    font-size: small;
+    padding: 0px 25px 0px 25px;
+  }
+
+  .sign-google {
+    margin-left: -15px;
+    padding: 40px;
+    height: 300px;
+  }
+
   .sign-google span {
-    font-size: x-large;
-    margin-top: 50px;    
+    font-size: small;
+    margin: auto;
   }
-  
+
   .sign-google a {
-    font-size: x-large;
-    width: 280px;
+    font-size: small;
+    padding: 15px;
   }
+
   .sign-google a img {
     width: 20px;
     float: left;
