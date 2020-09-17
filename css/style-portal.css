@@ -65,20 +65,20 @@ body {
 .sign-google a {
   text-align: center;
   margin: auto;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   display: block;
-  padding: 10px;
-  width: 200px;
-  border-radius: 6px;
+  /* padding: 10px; */
+  /* width: 200px; */
+  /* border-radius: 6px; */
   color: #777777;
-  background: white;
+  /* background: white; */
   text-decoration: none;
 
 }
 
-.sign-google a:hover {
+/* .sign-google a:hover {
   background: rgb(248, 248, 248);
-}
+} */
 
 
 /* Responsive Style */
