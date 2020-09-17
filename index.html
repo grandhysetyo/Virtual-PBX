@@ -30,10 +30,31 @@
                     <script type="module" src="js/Index.js"></script>
                     <a id="id-sign-in" class="g-signin2" data-onsuccess="signInWithGoogle"></a>           
                     <div id="id-sign-in" class="g-signin2" data-onsuccess="signInWithGoogle" style="color: black;"><img src="img/google.png"></div>         
+                    <div id="my-signin2"></div>
                 </div>
             </div>
         </div>
     </div>
+    
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
     <!-- <script src="js/jquery.min.js"></script> -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     
