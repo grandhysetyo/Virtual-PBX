@@ -97,25 +97,4 @@ body {
     padding: 0px 25px 0px 25px;
   }
 
-  .sign-google {
-    margin-left: -15px;
-    padding: 40px;
-    height: 300px;
-  }
-
-  .sign-google span {
-    font-size: small;
-    margin: auto;
-  }
-
-  .sign-google a {
-    font-size: small;
-    padding: 15px;
-  }
-
-  .sign-google a img {
-    width: 20px;
-    float: left;
-    margin-right: 5px;
-  }
-}
+  
