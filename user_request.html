@@ -125,8 +125,7 @@
                 </div>
                 <!-- Isi -->
                 <div class="col-md-12 col-xs-12">
-                    <div class="table-responsive">
-                        <h4 id="id-total-pbxs">Total PBX Containers: 0</h4>
+                    <div class="table-responsive">                        
                         <table id="tb" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -178,7 +177,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="id-pbx-request-cancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button id="id-pbx-request-submit" type="submit" class="btn btn-primary">Submit</button>                    
+                    <button id="id-pbx-request-submit" type="button" class="btn btn-primary">Submit</button>                    
                 </div>
             </div>
         </div>
@@ -268,7 +267,7 @@
             lastScrollTop = st;
         }
     </script>
-    <script type="module" src="js/Pbxs.js"></script>
+    <script type="module" src="js/PbxRequests.js"></script>
     <script>
         $(document).ready(function () {
             $('#tb').DataTable();
