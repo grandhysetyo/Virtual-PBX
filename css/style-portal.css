@@ -62,7 +62,7 @@ body {
   margin-right: 5px;
 }
 
-.sign-google a {
+.g-signin2 {
   text-align: center;
   margin: auto;
   margin-top: 25px;
