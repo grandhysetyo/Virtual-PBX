@@ -23,9 +23,8 @@ class Pbxs {
 			$("#id-pbx-row-user-name").hide();
 		}
 
-		let greeting = "Hi, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
-		$("#id-username-a").html(greeting);
-		$("#id-username-b").html(greeting);
+		let greeting = "Hi, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);		
+		$("#id-username").html(greeting);		
 	}
 
 	displayAllPbxs(data) {
