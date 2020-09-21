@@ -56,13 +56,13 @@ body {
   color: white;
 }
 
-.sign-google a img {
+.sign-google div img {
   width: 18px;
   float: left;
   margin-right: 5px;
 }
 
-.sign-google a {
+.sign-google div {
   text-align: center;
   margin: auto;
   margin-top: 25px;
