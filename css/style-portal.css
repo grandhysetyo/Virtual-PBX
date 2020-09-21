@@ -56,7 +56,7 @@ body {
   color: white;
 }
 
-.sign-google a img {
+/* .sign-google a img {
   width: 18px;
   float: left;
   margin-right: 5px;
@@ -78,7 +78,7 @@ body {
 
 .sign-google a:hover {
   background: rgb(248, 248, 248);
-}
+} */
 
 
 /* Responsive Style */
@@ -129,7 +129,7 @@ body {
     margin: auto;
   }
 
-  .sign-google a {
+  /* .sign-google a {
     font-size: small;
     padding: 15px;
   }
@@ -138,5 +138,5 @@ body {
     width: 20px;
     float: left;
     margin-right: 5px;
-  }
+  } */
 }
