@@ -25,7 +25,7 @@ class PbxRequests {
 			$("#id-create-new-pbx-request").show();
 		}
 
-		let greeting = "Selamat datang, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
+		let greeting = "Hi, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
 		$("#id-username").html(greeting);
 	}
 
@@ -57,9 +57,8 @@ class PbxRequests {
 				formattedPbxRequest = formattedPbxRequest +
 					"<button id=\"id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "\" type=\"button\" class=\"btn btn-success\">Approve</button>";
 			}
-			formattedPbxRequest = formattedPbxRequest +
-				"<div id=\"id-spinner-action-pbx-request-" + pbxRequest["id_pbx_request"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-				"<img id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
+			formattedPbxRequest = formattedPbxRequest +				
+				"<a id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\"><i class=\"fa fa-trash\"></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbx-requests").append(formattedPbxRequest);
