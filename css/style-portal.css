@@ -80,7 +80,9 @@ body {
   background: rgb(248, 248, 248);
 }
 
-
+.g-signin2{
+  margin-top: 100px;
+}
 /* Responsive Style */
 
 /* Mobile */
