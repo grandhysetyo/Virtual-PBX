@@ -56,6 +56,9 @@ body {
   color: white;
 }
 
+.g-signin2 {
+  padding: 20px 72px 0px 72px;
+}
 /* .sign-google a img {
   width: 18px;
   float: left;
@@ -129,6 +132,9 @@ body {
     margin: auto;
   }
 
+  .g-signin2 {
+    padding: 20px 75px 0px 75px;
+  }
   /* .sign-google a {
     font-size: small;
     padding: 15px;
