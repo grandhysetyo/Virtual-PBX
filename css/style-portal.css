@@ -46,7 +46,7 @@ body {
   margin-right: -15px;
   height: 768px;
   padding: 30px;
-  background: linear-gradient(90deg, rgba(115, 169, 238, 1) 33%, rgba(88, 142, 212, 1) 100%);
+  /* background: linear-gradient(90deg, rgba(115, 169, 238, 1) 33%, rgba(88, 142, 212, 1) 100%); */
 }
 
 .sign-google span {
@@ -97,4 +97,13 @@ body {
     padding: 0px 25px 0px 25px;
   }
 
-  
+  .sign-google {
+    margin-left: -15px;
+    padding: 40px;
+    height: 300px;
+  }
+
+  .sign-google span {
+    font-size: small;
+    margin: auto;
+  }
