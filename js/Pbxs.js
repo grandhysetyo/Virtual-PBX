@@ -45,8 +45,8 @@ class Pbxs {
 				"<td>" + pbx["vm_address"] + "</td>\n" +
 				"<td>" +
 				"<div id=\"id-spinner-action-pbx-" + pbx["id_pbx"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-				"<a href='user_extension.html?id=" + pbx["id_pbx"] + "\"> <i class="fa fa-trash"></i></a>"+
-				"<a id=\"id-delete-pbx-" + pbx["id_pbx"] + "\"> <i class="fa fa-trash"></i></a>"+
+				"<a href='user_extension.html?id=" + pbx["id_pbx"] + "\"> <i class=\"fa fa-trash\"></i></a>"+
+				"<a id=\"id-delete-pbx-" + pbx["id_pbx"] + "\"> <i class=\"fa fa-trash\"></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbxs").append(formattedPbx);
