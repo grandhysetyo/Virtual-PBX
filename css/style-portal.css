@@ -42,27 +42,27 @@ body {
   font-family: sans-serif;
 }
 
-#sign-google {
+.sign-google {
   margin-right: -15px;
   height: 768px;
   padding: 30px;
   background: linear-gradient(90deg, rgba(115, 169, 238, 1) 33%, rgba(88, 142, 212, 1) 100%);
 }
 
-#sign-google span {
+.sign-google span {
   margin-top: 300px;
   text-align: center;
   display: block;
   color: white;
 }
 
-#sign-google a img {
+.sign-google a img {
   width: 18px;
   float: left;
   margin-right: 5px;
 }
 
-#sign-google a {
+.sign-google a {
   text-align: center;
   margin: auto;
   margin-top: 25px;
@@ -76,7 +76,7 @@ body {
 
 }
 
-#sign-google a:hover {
+.sign-google a:hover {
   background: rgb(248, 248, 248);
 }
 
