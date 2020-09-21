@@ -56,13 +56,13 @@ body {
   color: white;
 }
 
-.sign-google a img {
-  width: 18px;
-  float: left;
-  margin-right: 5px;
-}
+/* .sign-google a img { */
+  /* width: 18px; */
+  /* float: left; */
+  /* margin-right: 5px; */
+/* } */
 
-.sign-google a {
+.g-signin2 {
   text-align: center;
   margin: auto;
   margin-top: 25px;
@@ -76,9 +76,9 @@ body {
 
 }
 
-.sign-google a:hover {
-  background: rgb(248, 248, 248);
-}
+/* .sign-google a:hover { */
+  /* background: rgb(248, 248, 248); */
+/* ?} */
 
 
 /* Responsive Style */
