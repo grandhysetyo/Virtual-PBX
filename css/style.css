@@ -572,4 +572,9 @@ body {
   .active>div:first-child+div+div+div {
     display: block;
   }
+
+  .row-2 {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
 }
