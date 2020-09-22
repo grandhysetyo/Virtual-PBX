@@ -58,7 +58,7 @@ class PbxRequests {
 					"<button id=\"id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "\" type=\"button\" class=\"btn btn-success\">Approve</button>";
 			}
 			formattedPbxRequest = formattedPbxRequest +				
-				"<a id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\"><i class=\"fa fa-trash\"></i></a>"+
+				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "'><i class='fa fa-trash'></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbx-requests").append(formattedPbxRequest);
