@@ -44,8 +44,8 @@ class Pbxs {
 				"<td>" + pbx["number_of_extension"] + "</td>\n" +
 				"<td>" + pbx["vm_address"] + "</td>\n" +
 				"<td>" +				
-				"<a href='user_extension.html?id=" + pbx["id_pbx"] + "\"><i class=\"fa fa-info\"></i></a>"+
-				"<a id=\"id-delete-pbx-" + pbx["id_pbx"] + "\"> <i class=\"fa fa-trash\"></i></a>"+
+				"<a href='user_extension.html?id=" + pbx["id_pbx"] + "><i class='fa fa-info'></i></a>"+
+				"<a id='id-delete-pbx-'" + pbx["id_pbx"] + "'><i class='fa fa-trash'></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbxs").append(formattedPbx);
