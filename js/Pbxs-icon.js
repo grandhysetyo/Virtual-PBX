@@ -38,6 +38,19 @@ class Pbxs {
 
             if (count==1) {
                 formattedPbx = "<div class='item active'><div class='carousel-col'><div class='block img-responsive'><a href='id-delete-pbx-'" + pbx["id_pbx"] + "'><i class='fa fa-times fa-lg '></i></a><img src='img/virtual-pbx.png'/>";
+                if (role === Constant.USER_TYPE_ADMIN) {
+                    formattedPbx = formattedPbx +
+                        "<h4>" + pbx["user_email"] + "</h4>\n";
+                }
+                formattedPbx = formattedPbx +
+                    "<h4>" + pbx["pbx_name"] + "</h4>"+
+                    "<span>" + pbx["location"] + "</span>"+
+                    "<span>" + pbx["vm_address"] + "</span>"+
+                    "<span>"+ pbx["number_of_extension"] +"</span>"+
+                    "<span>Saldo : 1.000</span>"+
+                    "<span>Public Number</span>"+
+                    "<span>02150858122</span>"+
+                    "\n </div>\n </div>\n </div>"; 
             }
 			else {
                 formattedPbx = "<div class='item'><div class='carousel-col'><div class='block img-responsive'><a href='id-delete-pbx-'" + pbx["id_pbx"] + "'><i class='fa fa-times fa-lg '></i></a><img src='img/virtual-pbx.png'/>";
