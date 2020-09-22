@@ -55,7 +55,7 @@ class Pbxs {
                     "<span>02150858122</span>"+
                     "\n </div>\n </div>\n </div>";                
             }
-			
+            count = count+1;			
 			$("#id-tbody-pbxs").append(formattedPbx);
 		}
 
