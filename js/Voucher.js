@@ -101,7 +101,7 @@ class Voucher {
 					"<td>" + voucher["voucher_code"] + "</td>\n" +
                     "<td>" +
                     "<div id=\"id-spinner-action-voucher-" + voucher["id_voucher"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-                    "<button id=\"btn-detail-voucher-history-" + voucher["id_voucher"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\"><i class=\"fas fa-info fa-sm fa-fw mr-1 text-white-400\"></i>Detail</button>"
+                    "<button id=\"btn-detail-voucher-history-" + voucher["id_voucher"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\">Detail</button>"
                     "</td>\n" +
                     "</tr>";
 			    $("#id-tbody-voucher-history").append(formattedVoucher);
