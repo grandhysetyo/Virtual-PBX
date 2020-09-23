@@ -17,7 +17,7 @@ class Voucher {
                     "<td>" + voucher["status"] + "</td>\n" +
                     "<td>" +
                     "<div id=\"id-spinner-action-voucher-" + voucher["id_voucher"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-                    "<button id=\"btn-detail-voucher-" + voucher["id_voucher"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\"><i class=\"fas fa-info fa-sm fa-fw mr-1 text-white-400\"></i>Detail</button>"
+                    "<button id=\"btn-detail-voucher-" + voucher["id_voucher"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\"></i>Detail</button>"
                     "</td>\n" +
                     "</tr>";
 			    $("#id-tbody-vouchers-active").append(formattedVoucher);
