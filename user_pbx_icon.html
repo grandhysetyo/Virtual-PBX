@@ -127,8 +127,83 @@
                 <!-- icon -->
                 <div class="col-md-12 col-xs-12">
                     <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="0">
-                        <div id="id-tbody-pbxs" class="carousel-inner"> 
-
+                        <div class="carousel-inner">                             
+                                <div class="item active">
+                                    <div class="carousel-col">
+                                        <div class="block img-responsive">
+                                            <a href="id-delete-pbx-97"><i class="fa fa-times fa-lg "></i></a>
+                                            <img src="img/virtual-pbx.png">
+                                            <h4>PBX-GR1</h4>
+                                            <span>Bondowoso - Regional 5</span>
+                                            <span>10.14.36.128</span>
+                                            <span>10</span>
+                                            <span>Saldo : 1.000</span>
+                                            <span>Public Number</span>
+                                            <span>02150858122</span>
+                                        </div>                            
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-col">
+                                        <div class="block img-responsive">
+                                            <a href="id-delete-pbx-98"><i class="fa fa-times fa-lg "></i></a>
+                                            <img src="img/virtual-pbx.png">
+                                            <h4>PBX-GR2</h4>
+                                            <span>Bandung - Regional 3</span>
+                                            <span>10.14.36.184</span>
+                                            <span>10</span>
+                                            <span>Saldo : 1.000</span>
+                                            <span>Public Number</span>
+                                            <span>02150858122</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-col">
+                                        <div class="block img-responsive">
+                                            <a href="id-delete-pbx-98"><i class="fa fa-times fa-lg "></i></a>
+                                            <img src="img/virtual-pbx.png">
+                                            <h4>PBX-GR3</h4>
+                                            <span>Bandung - Regional 3</span>
+                                            <span>10.14.36.184</span>
+                                            <span>10</span>
+                                            <span>Saldo : 1.000</span>
+                                            <span>Public Number</span>
+                                            <span>02150858122</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-col">
+                                        <div class="block img-responsive">
+                                            <a href="id-delete-pbx-98"><i class="fa fa-times fa-lg "></i></a>
+                                            <img src="img/virtual-pbx.png">
+                                            <h4>PBX-GR4</h4>
+                                            <span>Bandung - Regional 3</span>
+                                            <span>10.14.36.184</span>
+                                            <span>10</span>
+                                            <span>Saldo : 1.000</span>
+                                            <span>Public Number</span>
+                                            <span>02150858122</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-col">
+                                        <div class="block img-responsive">
+                                            <a href="id-delete-pbx-98"><i class="fa fa-times fa-lg "></i></a>
+                                            <img src="img/virtual-pbx.png">
+                                            <h4>PBX-GR5</h4>
+                                            <span>Bandung - Regional 3</span>
+                                            <span>10.14.36.184</span>
+                                            <span>10</span>
+                                            <span>Saldo : 1.000</span>
+                                            <span>Public Number</span>
+                                            <span>02150858122</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                         </div>
                         <!-- Controls -->
                         <div class="left carousel-control">
@@ -224,24 +299,7 @@
         }
     </script>
 
-    <script>
-        $('.carousel[data-type="multi"] .item').each(function () {
-            var next = $(this).next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            next.children(':first-child').clone().appendTo($(this));
-
-            for (var i = 0; i < 2; i++) {
-                next = next.next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-
-                next.children(':first-child').clone().appendTo($(this));
-            }
-        });
-    </script>
+    
 </body>
 
 </html>
