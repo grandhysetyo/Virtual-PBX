@@ -14,10 +14,9 @@ class OutboundNumber {
 				"<td>" + outboundNumber["location"] + "</td>\n" +
 				"<td>" + outboundNumber["code_area"] + "</td>\n" +
 				"<td>" + outboundNumber["number"] + "</td>\n" +
-				"<td>" +
-				"<div id=\"id-spinner-action-outbound-number-" + outboundNumber["id_outbound_num"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-				"<img id=\"id-delete-outbound-number-" + outboundNumber["id_outbound_num"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
-				"<img id=\"id-click-update-outbound-number-" + outboundNumber["id_outbound_num"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px;\">" +
+				"<td>" +				
+				"<a id='id-delete-outbound-number-'" + outboundNumber["id_outbound_num"] + "' style='margin-left: 5px'><i class='fa fa-trash'></i></a>"+
+				"<a id='id-click-update-outbound-number-'" + outboundNumber["id_outbound_num"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o'></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-outbound-numbers").append(formattedOutboundNumber);
