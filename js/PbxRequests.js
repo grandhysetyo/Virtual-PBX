@@ -55,10 +55,10 @@ class PbxRequests {
 				"<td>";
 			if (role === Constant.USER_TYPE_ADMIN && pbxRequest["status"] === "Pending") {
 				formattedPbxRequest = formattedPbxRequest +					
-					"<a id='id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "'><i class='fa fa-check-circle'></i></a>";
+					"<a id='id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "' style='margin-left:5px;'><i class='fa fa-check-circle'></i></a>";
 			}
 			formattedPbxRequest = formattedPbxRequest +				
-				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "'><i class='fa fa-trash'></i></a>"+
+				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "' style='margin-left:5px;'><i class='fa fa-trash'></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbx-requests").append(formattedPbxRequest);
