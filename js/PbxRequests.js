@@ -54,8 +54,8 @@ class PbxRequests {
 				"<td>" + pbxRequest["number_of_extension"] + "</td>\n" +
 				"<td>";
 			if (role === Constant.USER_TYPE_ADMIN && pbxRequest["status"] === "Pending") {
-				formattedPbxRequest = formattedPbxRequest +
-					"<button id=\"id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "\" type=\"button\" class=\"btn btn-success\">Approve</button>";
+				formattedPbxRequest = formattedPbxRequest +					
+					"<a id='id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "'><i class='fa fa-check-circle'></i></a>";
 			}
 			formattedPbxRequest = formattedPbxRequest +				
 				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "'><i class='fa fa-trash'></i></a>"+
