@@ -33,11 +33,11 @@ class Extension {
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
 					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-danger\" style=\"color: white; margin-left: 5pt;\">" +
-					"<i class='fa fa-minus-circle' aria-hidden='true'></i>Disable operator</button>"
+					"<i class='fa fa-minus-circle' style='margin-right:5px;' aria-hidden='true'></i>Disable operator</button>"
 			} else if (!operatorEnabled) {
 				buttonOperator = 
 					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\">" +
-					"<i class='fa fa-check-square' aria-hidden='true'></i>Enable operator</button>"
+					"<i class='fa fa-check-square' style='margin-right:5px;' aria-hidden='true'></i>Enable operator</button>"
 			} else {
 				buttonOperator = ""
 			}
