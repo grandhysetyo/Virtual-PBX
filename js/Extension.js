@@ -33,11 +33,11 @@ class Extension {
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
 					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-danger\" style=\"color: white; margin-left: 5pt;\">" +
-					"<span class=\"icon-operator\"></span>Disable operator</button>"
+					"<i class='fa fa-minus-circle' aria-hidden='true'></i>Disable operator</button>"
 			} else if (!operatorEnabled) {
 				buttonOperator = 
 					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\">" +
-					"<span class=\"icon-operator\"></span>Enable operator</button>"
+					"<i class='fa fa-check-square' aria-hidden='true'></i>Enable operator</button>"
 			} else {
 				buttonOperator = ""
 			}
@@ -60,10 +60,10 @@ class Extension {
 				"<td>" + forwarded_number + "</td>\n" +
 				"<td>" + saldo + "</td>\n" +
 				"<td>" +
-				"<div id=\"id-spinner-action-extension-" + extension["id_extension"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-				"<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
-				"<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px;\">" +
-				"<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px;\">" +
+				"<div id=\"id-spinner-action-extension-" + extension["id_extension"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +				
+				"<a id='id-delete-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-trash'></i></a>"+
+				"<a id='id-click-update-extension"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o'></i></a>"+
+				"<a id='id-click-top-up-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-money'></i></a>"+
 				buttonOperator +
 				"</td>\n" +
 				"</tr>";
