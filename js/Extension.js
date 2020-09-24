@@ -355,8 +355,8 @@ class Extension {
 			"<td>" + outgoing + "</td>\n" +
 			"<td>" + data["cac"] + "</td>\n" +
 			"<td>" + saldo + "</td>\n" +
-			"<td>" +
-			"<img id=\"id-click-top-up-pbx-" + data["id_pbx"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px;\">" +
+			"<td>" +			
+			"<a id='id-click-top-up-pbx-"+ data["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-money'></i></a>"+
 			"</td>\n" +
 			"</tr>";
 		$("#id-tbody-status").html(formattedStatus);
