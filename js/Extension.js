@@ -61,9 +61,9 @@ class Extension {
 				"<td>" + saldo + "</td>\n" +
 				"<td>" +
 				"<div id=\"id-spinner-action-extension-" + extension["id_extension"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +				
-				"<a id='id-delete-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-trash'></i></a>"+
-				"<a id='id-click-update-extension"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o'></i></a>"+
-				"<a id='id-click-top-up-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-money'></i></a>"+
+				"<a id='id-delete-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-trash fa-lg'></i></a>"+
+				"<a id='id-click-update-extension"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o fa-lg'></i></a>"+
+				"<a id='id-click-top-up-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-money fa-lg'></i></a>"+
 				buttonOperator +
 				"</td>\n" +
 				"</tr>";
@@ -356,7 +356,7 @@ class Extension {
 			"<td>" + data["cac"] + "</td>\n" +
 			"<td>" + saldo + "</td>\n" +
 			"<td>" +			
-			"<a id='id-click-top-up-pbx-"+ data["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-money'></i></a>"+
+			"<a id='id-click-top-up-pbx-"+ data["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-money fa-lg'></i></a>"+
 			"</td>\n" +
 			"</tr>";
 		$("#id-tbody-status").html(formattedStatus);
