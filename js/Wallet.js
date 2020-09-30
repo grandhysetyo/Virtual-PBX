@@ -9,8 +9,10 @@ class Wallet {
 
 	displaySaldo(data) {
         let saldo = data["saldo"];
-        $("#id-wallet-saldo").html("");
-		$("#id-wallet-saldo").html("Rp. " + saldo);
+		$("#id-wallet-saldo1").html("");
+		$("#id-wallet-saldo2").html("");
+		$("#id-wallet-saldo1").html("Rp. " + saldo);
+		$("#id-wallet-saldo2").html("Rp. " + saldo);
 	}
 
 	getSaldo(response) {
@@ -40,7 +42,7 @@ $(document).ready(function () {
 	let WALLET = new Wallet();
 	let greeting = "Hi, " + WALLET.storage.get(Constant.STORAGE_KEY_USER_NAME);
 	$("#id-username").html(greeting);
-	$("#id-voucher-top-up").click(function (){ WALLET.reedemVoucher(); });
+	$("#id-voucher-top-up").click(function (){ WALLET.reedemVoucher(); });	
 	GLOBAL.connection.getSaldo(function (data) {
 		WALLET.displaySaldo(data);
 	});
