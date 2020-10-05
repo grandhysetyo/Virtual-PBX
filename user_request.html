@@ -154,48 +154,39 @@
         <span>Copyright © 2020 Telkom - Direktorat Digital Business</span>
     </footer>
 
-    <!-- Modal content-->
+    <!-- Modal -->
     <div class="modal fade" id="modal-pbx-request" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">New PBX Requests</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New PBX</h4>
+                    <span>Request</span>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body">                    
                     <div class="form-group">
-                        <label for="id-pbx-request-name">PBX Name</label>
-                        <input type="text" class="form-control" id="id-pbx-request-name">
+                        <label for="pbx-name">PBX Name</label>
+                        <input type="text" class="form-control" id="id-pbx-request-name" placeholder="PBX Name">
                     </div>
                     <div class="form-group">
-                        <label for="id-pbx-request-location">Location</label>
+                        <label for="location">Location</label>
                         <select id="id-pbx-request-location" class="form-control">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="id-pbx-request-extension">Number of Extension</label>
+                        <label for="no-ext">No Extension</label>
                         <select class="form-control" id="id-pbx-request-extension" disabled>
                             <option>10</option>
                         </select>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="modal-footer">
-                    <div id="id-spinner-new-pbx-request"
-                         style="text-align: center; display: none;">
-                        <div style="margin: 10px;" class="spinner-border text-primary"
-                             role="status">
-                        </div>
-                        <h6>Submitting data...</h6>
-                    </div>
-                    <button id="id-pbx-request-cancel" type="button" class="btn btn-danger"
-                            data-dismiss="modal">Cancel</button>
-                    <button id="id-pbx-request-submit" type="button"
-                            class="btn btn-primary">Submit</button>
+                    <button id="id-pbx-request-cancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button id="id-pbx-request-submit" type="button" class="btn btn-primary">Submit</button>                    
                 </div>
             </div>
         </div>
     </div>
-    <!-- End of modal -->
 
     <div class="modal fade" id="logout" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -215,7 +206,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="modal fade" id="hapus" role="dialog">
+    <div class="modal fade" id="id-delete-pbx-request" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -231,9 +222,9 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <!-- <script>
+    <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')
     </script>
     <script src="dist/js/bootstrap.min.js"></script>
@@ -280,7 +271,7 @@
 
             lastScrollTop = st;
         }
-    </script> -->
+    </script>
     <script type="module" src="js/PbxRequests.js"></script>
     <script>
         $(document).ready(function () {
