@@ -131,20 +131,24 @@
                 <!-- Isi -->
                 <div class="col-md-12 col-xs-12">
                     <div class="table-responsive">                        
-                        <table id="tb" class="table table-striped table-bordered">
+                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                             <thead>
-                                <tr>
-                                    <th id="id-pbx-row-pbx-date">Date</th>
-									<th id="id-pbx-row-pbx-name">PBX Name</th>
-									<th id="id-pbx-row-location">Location</th>
-									<th id="id-pbx-row-extesion">Extension</th>
-									<th id="id-pbx-row-action">Action</th>
-                                </tr>
+                            <tr>
+                                <th id="id-pbx-row-pbx-date">Date</th>
+                                <th id="id-pbx-row-pbx-name">PBX Name</th>
+                                <th id="id-pbx-row-location">Location</th>
+                                <th id="id-pbx-row-extesion">Extension</th>
+                                <th id="id-pbx-row-action">Action</th>
+                            </tr>
                             </thead>
                             <tbody id="id-tbody-pbx-requests">
-                                
                             </tbody>
                         </table>
+                        <div id="id-spinner-pbxs" style="text-align: center; display: none;">
+                            <div style="margin: 10px;" class="spinner-border text-primary" role="status">
+                            </div>
+                            <h6>Retrieving data...</h6>
+                        </div>
                     </div>
                 </div>
             </div>
