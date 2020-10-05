@@ -25,7 +25,7 @@ class PbxRequests {
 			$("#id-create-new-pbx-request").show();
 		}
 
-		let greeting = "Hi, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
+		let greeting = "Selamat datang, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
 		$("#id-username").html(greeting);
 	}
 
@@ -54,11 +54,12 @@ class PbxRequests {
 				"<td>" + pbxRequest["number_of_extension"] + "</td>\n" +
 				"<td>";
 			if (role === Constant.USER_TYPE_ADMIN && pbxRequest["status"] === "Pending") {
-				formattedPbxRequest = formattedPbxRequest +					
-					"<a id='id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "' style='margin-left:5px;'><i class='fa fa-check-circle'></i></a>";
+				formattedPbxRequest = formattedPbxRequest +
+					"<button id=\"id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "\" type=\"button\" class=\"btn btn-success\">Approve</button>";
 			}
-			formattedPbxRequest = formattedPbxRequest +				
-				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "' style='margin-left:5px;'><i class='fa fa-trash'></i></a>"+
+			formattedPbxRequest = formattedPbxRequest +
+				"<div id=\"id-spinner-action-pbx-request-" + pbxRequest["id_pbx_request"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
+				"<img id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbx-requests").append(formattedPbxRequest);
