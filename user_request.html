@@ -131,24 +131,20 @@
                 <!-- Isi -->
                 <div class="col-md-12 col-xs-12">
                     <div class="table-responsive">                        
-                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                        <table id="tb" class="table table-striped table-bordered">
                             <thead>
-                            <tr>
-                                <th id="id-pbx-row-pbx-date">Date</th>
-                                <th id="id-pbx-row-pbx-name">PBX Name</th>
-                                <th id="id-pbx-row-location">Location</th>
-                                <th id="id-pbx-row-extesion">Extension</th>
-                                <th id="id-pbx-row-action">Action</th>
-                            </tr>
+                                <tr>
+                                    <th id="id-pbx-row-pbx-date">Date</th>
+									<th id="id-pbx-row-pbx-name">PBX Name</th>
+									<th id="id-pbx-row-location">Location</th>
+									<th id="id-pbx-row-extesion">Extension</th>
+									<th id="id-pbx-row-action">Action</th>
+                                </tr>
                             </thead>
                             <tbody id="id-tbody-pbx-requests">
+                                
                             </tbody>
                         </table>
-                        <div id="id-spinner-pbxs" style="text-align: center; display: none;">
-                            <div style="margin: 10px;" class="spinner-border text-primary" role="status">
-                            </div>
-                            <h6>Retrieving data...</h6>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -158,39 +154,48 @@
         <span>Copyright © 2020 Telkom - Direktorat Digital Business</span>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal content-->
     <div class="modal fade" id="modal-pbx-request" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
+            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">New PBX</h4>
-                    <span>Request</span>
+                    <h4 class="modal-title">New PBX Requests</h4>
                 </div>
-                <div class="modal-body">                    
+                <div class="modal-body">
                     <div class="form-group">
-                        <label for="pbx-name">PBX Name</label>
-                        <input type="text" class="form-control" id="id-pbx-request-name" placeholder="PBX Name">
+                        <label for="id-pbx-request-name">PBX Name</label>
+                        <input type="text" class="form-control" id="id-pbx-request-name">
                     </div>
                     <div class="form-group">
-                        <label for="location">Location</label>
+                        <label for="id-pbx-request-location">Location</label>
                         <select id="id-pbx-request-location" class="form-control">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="no-ext">No Extension</label>
+                        <label for="id-pbx-request-extension">Number of Extension</label>
                         <select class="form-control" id="id-pbx-request-extension" disabled>
                             <option>10</option>
                         </select>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="id-pbx-request-cancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button id="id-pbx-request-submit" type="button" class="btn btn-primary">Submit</button>                    
+                    <div id="id-spinner-new-pbx-request"
+                         style="text-align: center; display: none;">
+                        <div style="margin: 10px;" class="spinner-border text-primary"
+                             role="status">
+                        </div>
+                        <h6>Submitting data...</h6>
+                    </div>
+                    <button id="id-pbx-request-cancel" type="button" class="btn btn-danger"
+                            data-dismiss="modal">Cancel</button>
+                    <button id="id-pbx-request-submit" type="button"
+                            class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End of modal -->
 
     <div class="modal fade" id="logout" role="dialog">
         <div class="modal-dialog modal-lg">
