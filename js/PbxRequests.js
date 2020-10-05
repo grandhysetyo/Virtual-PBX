@@ -59,7 +59,7 @@ class PbxRequests {
 			}
 			formattedPbxRequest = formattedPbxRequest +
 				"<div id=\"id-spinner-action-pbx-request-" + pbxRequest["id_pbx_request"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +
-				"<img id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
+				"<a id='id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "' style='margin-left:5px;'><i class='fa fa-trash'></i></a>"+
 				"</td>\n" +
 				"</tr>";
 			$("#id-tbody-pbx-requests").append(formattedPbxRequest);
