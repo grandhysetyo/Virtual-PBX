@@ -62,7 +62,7 @@ class Extension {
 				"<td>" +
 				"<div id=\"id-spinner-action-extension-" + extension["id_extension"] + "\" class=\"spinner-border text-primary\" role=\"status\" style=\"display: none;\"></div>" +				
 				"<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" +
-				"<a id='id-click-update-extension"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o fa-lg'></i></a>"+
+				"<a id='id-click-update-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-pencil-square-o fa-lg'></i></a>"+
 				"<a id='id-click-top-up-extension-"+ extension["id_extension"] + "' style='margin-left: 5px'><i class='fa fa-money fa-lg'></i></a>"+
 				buttonOperator +
 				"</td>\n" +
