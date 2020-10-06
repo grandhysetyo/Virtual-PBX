@@ -25,7 +25,7 @@ class PbxRequests {
 			$("#id-create-new-pbx-request").show();
 		}
 
-		let greeting = "Selamat datang, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
+		let greeting = "Hi, " + this.storage.get(Constant.STORAGE_KEY_USER_NAME);
 		$("#id-username").html(greeting);
 	}
 
