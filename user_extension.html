@@ -46,7 +46,7 @@
                         <div class="user-photo-mobile">
                             <img src="img/user.png" alt="">
                             <h3>Your</h3>
-                            <h5>Wallet : 50.000</h4>
+                            <h5>Wallet : <span id="id-wallet-saldo2"></span></h4>
                         </div>
                     </li>                    
                     <li><a href="user_pbx.html"><i class="fa fa-list-alt" style="margin-right: 5px;"></i>MANAGE PBX</a>
@@ -70,7 +70,7 @@
             <div class="user-photo">
                 <img src="img/user.png" alt="">
                 <h3 id="id-username"></h3>
-                <h5>Wallet : 50.000</h5>
+                <h5>Wallet : <span id="id-wallet-saldo1"></span></h5>
             </div>
             <ul>                
                 <li>
@@ -512,7 +512,7 @@
             lastScrollTop = st;
         }
     </script>
-    
+    <script type="module" src="js/Wallet.js"></script>
     <script>
         $(document).ready(function () {
             $('#tb').DataTable({
