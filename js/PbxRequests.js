@@ -93,7 +93,17 @@ class PbxRequests {
 				}
 			}
 			table.row.add([pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],btnDelete]).draw();    
-		}		
+		}	
+		let self = this;
+		$("[id^=\"id-approve-pbx-request\"]").click(function (event) {
+			let pbxRequestId = event.target.id.split("-")[4];
+			self.approvePbxRequest(pbxRequestId);
+		});
+
+		$("[id^=\"id-delete-pbx-request\"]").click(function (event) {
+			let pbxRequestId = event.target.id.split("-")[4];
+			self.deletePbxRequest(pbxRequestId);
+		});	
 	}
 	displayPbxRequestCreation(response) {
 		$("#id-pbx-request-name").val("");
