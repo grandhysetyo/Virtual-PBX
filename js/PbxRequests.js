@@ -84,9 +84,10 @@ class PbxRequests {
 		
 		for (let pbxRequest of data) {
 			let btnDelete = "<img id=\"id-delete-pbx-request-" + pbxRequest["id_pbx_request"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px;\">" ;
+			let btnApprove = "<button id=\"id-approve-pbx-request-" + pbxRequest["id_pbx_request"] + "\" type=\"button\" class=\"btn btn-success\">Approve</button>";
 			if (role === Constant.USER_TYPE_ADMIN) {
-				if (role === Constant.USER_TYPE_ADMIN && pbxRequest["status"] === "Pending") {
-					table.row.add([pbxRequest['user_email'],pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],pbxRequest['id_pbx_request']]).draw();    	
+				if (pbxRequest["status"] === "Pending") {
+					table.row.add([pbxRequest['user_email'],pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],btnApprove + btnDelete]).draw();    	
 				}
 				else {
 					table.row.add([pbxRequest['user_email'],pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],pbxRequest['id_pbx_request']]).draw();    	
