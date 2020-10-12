@@ -77,6 +77,15 @@ class PbxRequests {
 		});
 	}
 
+	tesDisplayPBXReq(data){
+		let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+
+		var table = $('#tb').DataTable();
+		
+		for (let pbxRequest of data) {
+			table.row.add([pbxRequest['date']]).draw();    
+		}		
+	}
 	displayPbxRequestCreation(response) {
 		$("#id-pbx-request-name").val("");
 		$("#modal-pbx-request").modal("hide");
@@ -189,6 +198,7 @@ $(document).ready(function () {
 		PBX_REQUESTS.displayLocations(data);
 	});
     GLOBAL.connection.getAllPbxRequests(function (data) {
-		PBX_REQUESTS.displayAllPbxRequests(data);
+		PBX_REQUESTS.tesDisplayPBXReq(data);
 	});
+	
 });
