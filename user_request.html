@@ -22,7 +22,10 @@
 
     <!-- JS -->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <script src="js/vendor/jquery-1.11.2.js"></script>   
+    <script src="js/vendor/jquery-1.11.2.js"></script>
+
+    <script src="dist/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vendor/datatables.min.js"></script>
 </head>
 
 <body>
@@ -128,7 +131,7 @@
                 <!-- Isi -->
                 <div class="col-md-12 col-xs-12">
                     <div class="table-responsive">                        
-                        <table class="table table-striped table-bordered" id="dataTables">
+                        <table id="tb" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th id="id-pbx-row-pbx-date">Date</th>
@@ -269,17 +272,14 @@
             lastScrollTop = st;
         }
     </script>
-    <script type="text/javascript" src="js/vendor/datatables.min.js"></script>
-    <script src="dist/js/dataTables.bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#dataTable').DataTable();
-        });
-
-    </script>
-
     <script type="module" src="js/Wallet.js"></script>
-    <script type="module" src="js/PbxRequests.js"></script>    
+    <script type="module" src="js/PbxRequests.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#tb').DataTable();
+        });
+    </script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
 
