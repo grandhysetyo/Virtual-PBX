@@ -93,7 +93,9 @@ class PbxRequests {
 					table.row.add([pbxRequest['user_email'],pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],pbxRequest['id_pbx_request']]).draw();    	
 				}
 			}
-			table.row.add([pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],btnDelete]).draw();    
+			else{
+				table.row.add([pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],btnDelete]).draw();    
+			}
 		}	
 		let self = this;
 		$("[id^=\"id-approve-pbx-request\"]").click(function (event) {
