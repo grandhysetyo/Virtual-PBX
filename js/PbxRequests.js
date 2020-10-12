@@ -83,7 +83,7 @@ class PbxRequests {
 		var table = $('#tb').DataTable();
 		
 		for (let pbxRequest of data) {
-			table.row.add([pbxRequest['date']]).draw();    
+			table.row.add([pbxRequest['date'],pbxRequest['pbx_request_name'],pbxRequest['location'],pbxRequest['number_of_extension'],pbxRequest['id_pbx_request']]).draw();    
 		}		
 	}
 	displayPbxRequestCreation(response) {
