@@ -28,28 +28,44 @@ class Pbxs {
 	}
 
 	displayAllPbxs(data) {
-		this.hideLoadingSpinner();
-		$("#id-total-pbxs").html("Total PBX Containers: " + data.length);
+		// this.hideLoadingSpinner();
+		// $("#id-total-pbxs").html("Total PBX Containers: " + data.length);
 
+		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+		// for (let pbx of data) {
+		// 	let formattedPbx = "<tr>\n";
+		// 	if (role === Constant.USER_TYPE_ADMIN) {
+		// 		formattedPbx = formattedPbx +
+		// 			"<td>" + pbx["user_email"] + "</td>\n";
+		// 	}
+		// 	formattedPbx = formattedPbx +
+		// 		"<td><a href='user_extension.html?id=" + pbx["id_pbx"] + "'>" + pbx["pbx_name"] + "</a></td>\n" +
+		// 		"<td>" + pbx["location"] + "</td>\n" +
+		// 		"<td>" + pbx["number_of_extension"] + "</td>\n" +
+		// 		"<td>" + pbx["vm_address"] + "</td>\n" +
+		// 		"<td>" +				
+		// 		"<a href='user_extension.html?id=" + pbx["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-info'></i></a>"+
+		// 		"<img id=\"id-delete-pbx-" + pbx["id_pbx"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 13px;\">" +
+		// 		"</td>\n" +
+		// 		"</tr>";
+		// 	$("#id-tbody-pbxs").append(formattedPbx);
+		// }
 		let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+
+		var table = $('#tb').DataTable();
+		
 		for (let pbx of data) {
-			let formattedPbx = "<tr>\n";
+			let btnDelete = "<img id=\"id-delete-pbx-" + pbx["id_pbx"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 13px;\">" ;
+			let btnExtension = "<a href='user_extension.html?id=" + pbx["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-info'></i></a>";
+			let btnName = "<a href='user_extension.html?id=" + pbx["id_pbx"] + "'>" + pbx["pbx_name"] + "</a>";
 			if (role === Constant.USER_TYPE_ADMIN) {
-				formattedPbx = formattedPbx +
-					"<td>" + pbx["user_email"] + "</td>\n";
+				table.row.add([pbx['user_email'],pbx['Location'],pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    	
+				
 			}
-			formattedPbx = formattedPbx +
-				"<td><a href='user_extension.html?id=" + pbx["id_pbx"] + "'>" + pbx["pbx_name"] + "</a></td>\n" +
-				"<td>" + pbx["location"] + "</td>\n" +
-				"<td>" + pbx["number_of_extension"] + "</td>\n" +
-				"<td>" + pbx["vm_address"] + "</td>\n" +
-				"<td>" +				
-				"<a href='user_extension.html?id=" + pbx["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-info'></i></a>"+
-				"<img id=\"id-delete-pbx-" + pbx["id_pbx"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 13px;\">" +
-				"</td>\n" +
-				"</tr>";
-			$("#id-tbody-pbxs").append(formattedPbx);
-		}
+			else{
+				table.row.add([btnName+ pbx['Location'],pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    
+			}
+		}	
 
 		let self = this;
 		$("[id^=\"id-delete-pbx-\"]").click(function (event) {
