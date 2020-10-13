@@ -24,6 +24,11 @@ class Extension {
 		let forwarded_number = null
 		var table = $('#tb').DataTable();
 		for (let extension of data) {
+			if (extension["operator"] === 1) {
+				operatorEnabled = true
+			}
+		}
+		for (let extension of data) {
 			number = number + 1;
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
