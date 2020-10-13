@@ -19,8 +19,7 @@ class Callog {
     
 }
 $(document).ready(function () {
-    let callog = new Callog(); 
-    callog.displayBasedOnRole();   
+    let callog = new Callog();     
     GLOBAL.connection.getAllPbxs(function(data) {
         callog.displayAllPbxs(data);
     });
