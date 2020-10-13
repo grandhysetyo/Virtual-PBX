@@ -18,7 +18,6 @@ class Extension {
 	}
 
 	displayAllExtensions(data) {
-		var table = $('#tb').DataTable();
 		let number = 0;
 		let operatorEnabled = false
 		let buttonOperator = null
@@ -28,7 +27,7 @@ class Extension {
 				operatorEnabled = true
 			}
 		}
-		
+		var table = $('#tb').DataTable();
 		for (let extension of data) {
 			number = number + 1;
 			if (extension["operator"] === 1 && operatorEnabled) {
