@@ -18,10 +18,6 @@ class Extension {
 	}
 
 	displayAllExtensions(data) {
-		let number = 0;
-		let operatorEnabled = false
-		let buttonOperator = null
-		let forwarded_number = null
 		for (let extension of data) {
 			if (extension["operator"] === 1) {
 				operatorEnabled = true
@@ -73,7 +69,7 @@ class Extension {
 			// 	buttonOperator +
 			// 	"</td>\n" +
 			// 	"</tr>";
-			$("#id-tbody-extensions").append(table);
+			// $("#id-tbody-extensions").append(formattedExtension);
 		}
 
 		let self = this;
