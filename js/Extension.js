@@ -33,29 +33,7 @@ class Extension {
 			let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
 			let btnUpdate = "<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px; margin-left: 5px;\">";
 			let btnTopUp = "<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px; margin-left: 5px;\">";
-			number = number + 1;
-			if (extension["operator"] === 1 && operatorEnabled) {
-				buttonOperator = 
-					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-danger\" style=\"color: white; margin-left: 5pt;\">" +
-					"<i class='fa fa-minus-circle' style='margin-right:5px;' aria-hidden='true'></i>Disable operator</button>"
-			} else if (!operatorEnabled) {
-				buttonOperator = 
-					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-sm\" style=\"background: #4e73df; color: white; margin-left: 5pt;\">" +
-					"<i class='fa fa-check-square' style='margin-right:5px;' aria-hidden='true'></i>Enable operator</button>"
-			} else {
-				buttonOperator = ""
-			}
-
-			if (extension["forwarded_number"] === "") {
-				forwarded_number = "disabled"
-			} else {
-				forwarded_number = extension["forwarded_number"]
-			}
-
-			let saldo = extension["saldo"]
-			if (extension["saldo"] == null) {
-				saldo = "Disabled"
-			}
+			
 			table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp+ buttonOperator]).draw();
 
 			// let formattedExtension = "<tr>\n" +
