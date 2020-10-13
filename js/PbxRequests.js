@@ -36,7 +36,7 @@ class PbxRequests {
 		}
 	}
 
-	displayAllPbxRequests(data) {
+	olddisplayAllPbxRequests(data) {
 		this.hideLoadingSpinner();
 		$("#id-total-pbx-requests").html("Total PBX Requests: " + data.length);
 		let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
@@ -77,7 +77,7 @@ class PbxRequests {
 		});
 	}
 
-	tesDisplayPBXReq(data){
+	displayAllPbxRequests(data){
 		let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
 
 		var table = $('#tb').DataTable();
@@ -220,7 +220,7 @@ $(document).ready(function () {
 		PBX_REQUESTS.displayLocations(data);
 	});
     GLOBAL.connection.getAllPbxRequests(function (data) {
-		PBX_REQUESTS.tesDisplayPBXReq(data);
+		PBX_REQUESTS.displayAllPbxRequests(data);
 	});
 	
 });
