@@ -59,7 +59,7 @@ class Pbxs {
 			let btnExtension = "<a href='user_extension.html?id=" + pbx["id_pbx"] + "' style='margin-left: 5px'><i class='fa fa-info'></i></a>";
 			let btnName = "<a href='user_extension.html?id=" + pbx["id_pbx"] + "'>" + pbx["pbx_name"] + "</a>";
 			if (role === Constant.USER_TYPE_ADMIN) {
-				table.row.add([pbx['user_email'],btnName,pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    	
+				table.row.add([pbx['user_email'],btnName,pbx['location'],pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    	
 				
 			}
 			else{
