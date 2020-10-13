@@ -59,13 +59,7 @@ class Extension {
 			let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
 			let btnUpdate = "<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px; margin-left: 5px;\">";
 			let btnTopUp = "<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px; margin-left: 5px;\">";
-			if (role === Constant.USER_TYPE_ADMIN) {
-				table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp]).draw();    	
-				
-			}
-			else{
-				table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp]).draw();    
-			}
+			table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp]).draw();
 
 			// let formattedExtension = "<tr>\n" +
 			// 	"<td>" + extension["name_assignee"] + "</td>\n" +
