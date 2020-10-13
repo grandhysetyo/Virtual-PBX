@@ -18,7 +18,10 @@ class Extension {
 	}
 
 	displayAllExtensions(data) {
-		
+		let number = 0;
+		let operatorEnabled = false
+		let buttonOperator = null
+		let forwarded_number = null
 		for (let extension of data) {
 			if (extension["operator"] === 1) {
 				operatorEnabled = true
@@ -26,6 +29,7 @@ class Extension {
 		}
 		
 		for (let extension of data) {
+			var table = $('#tb').DataTable();
 			number = number + 1;
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
@@ -49,7 +53,7 @@ class Extension {
 			if (extension["saldo"] == null) {
 				saldo = "Disabled"
 			}
-			var table = $('#tb').DataTable();
+			
 			let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
 			let btnUpdate = "<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px; margin-left: 5px;\">";
 			let btnTopUp = "<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px; margin-left: 5px;\">";
