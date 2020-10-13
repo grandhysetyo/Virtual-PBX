@@ -22,13 +22,9 @@ class Extension {
 		let operatorEnabled = false
 		let buttonOperator = null
 		let forwarded_number = null
-		for (let extension of data) {
-			if (extension["operator"] === 1) {
-				operatorEnabled = true
-			}
-		}
 		var table = $('#tb').DataTable();
 		for (let extension of data) {
+			number = number + 1;
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
 					"<button id=\"btn-update-operator-" + extension["id_extension"] + "\" type=\"button\" class=\"btn btn-danger\" style=\"color: white; margin-left: 5pt;\">" +
