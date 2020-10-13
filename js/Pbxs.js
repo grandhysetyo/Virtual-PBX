@@ -29,7 +29,7 @@ class Pbxs {
 
 	displayAllPbxs(data) {
 		// this.hideLoadingSpinner();
-		// $("#id-total-pbxs").html("Total PBX Containers: " + data.length);
+		$("#id-total-pbxs").html("Total PBX Containers: " + data.length);
 
 		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
 		// for (let pbx of data) {
