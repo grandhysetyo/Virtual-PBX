@@ -20,6 +20,6 @@ class Callog {
 $(document).ready(function () {
     let Callog = new Callog();    
     GLOBAL.connection.getAllPbxs(function(data) {
-        PBCallogXS.displayAllPbxs(data);
+        Callog.displayAllPbxs(data);
     });
 });
