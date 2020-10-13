@@ -27,9 +27,9 @@ class Extension {
 				operatorEnabled = true
 			}
 		}
-		
+		var table = $('#tb').DataTable();
+		table.clear().draw();
 		for (let extension of data) {
-			var table = $('#tb').DataTable();
 			number = number + 1;
 			if (extension["operator"] === 1 && operatorEnabled) {
 				buttonOperator = 
