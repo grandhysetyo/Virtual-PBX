@@ -3,11 +3,12 @@ import * as Storage from "./Storage.js"
 import * as Constant from "./Constant.js";
 
 class Callog {
-	constructor(id_pbx) {
+	constructor() {
 		this.storage = new Storage.Storage();		
     }
+    
     displayAllPbxs(data) {
-		let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
 		for (let pbx of data) {
 			let formattedPbx;
 			formattedPbx = "<option value='"+pbx["id_pbx"]+"'>"+ pbx["pbx_name"] +"</option>"
@@ -18,8 +19,10 @@ class Callog {
     
 }
 $(document).ready(function () {
-    let Callog = new Callog();    
+    let callog = new Callog(); 
+    callog.displayBasedOnRole();   
     GLOBAL.connection.getAllPbxs(function(data) {
-        Callog.displayAllPbxs(data);
+        callog.displayAllPbxs(data);
     });
 });
+
