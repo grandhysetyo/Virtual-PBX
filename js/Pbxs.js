@@ -63,7 +63,7 @@ class Pbxs {
 				
 			}
 			else{
-				table.row.add([btnName,pbx['Location'],pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    
+				table.row.add([btnName,pbx['location'],pbx['number_of_extension'],pbx['vm_address'],btnExtension+ btnDelete]).draw();    
 			}
 		}	
 
