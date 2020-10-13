@@ -18,6 +18,7 @@ class Extension {
 	}
 
 	displayAllExtensions(data) {
+		
 		for (let extension of data) {
 			if (extension["operator"] === 1) {
 				operatorEnabled = true
