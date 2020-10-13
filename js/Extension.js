@@ -52,6 +52,12 @@ class Extension {
 			if (extension["saldo"] == null) {
 				saldo = "Disabled"
 			}
+			var table = $('#tb').DataTable();
+			let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
+			let btnUpdate = "<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px; margin-left: 5px;\">";
+			let btnTopUp = "<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px; margin-left: 5px;\">";
+			
+			table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp+ buttonOperator]).draw();
 
 			// let formattedExtension = "<tr>\n" +
 			// 	"<td>" + extension["name_assignee"] + "</td>\n" +
@@ -67,17 +73,9 @@ class Extension {
 			// 	buttonOperator +
 			// 	"</td>\n" +
 			// 	"</tr>";
-			// $("#id-tbody-extensions").append(formattedExtension);
+			$("#id-tbody-extensions").append(table);
 		}
-		for (let extension of data){
-		var table = $('#tb').DataTable();
-		let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
-		let btnUpdate = "<img id=\"id-click-update-extension-" + extension["id_extension"] + "\" alt=\"Icon for updating\" src=\"res/ic_edit.png\" style=\"width: 20px; margin-left: 5px;\">";
-		let btnTopUp = "<img id=\"id-click-top-up-extension-" + extension["id_extension"] + "\" alt=\"Icon for top up\" src=\"res/ic_top_up.png\" style=\"width: 20px; margin-left: 5px;\">";
-			
-		table.row.add([extension['name_assignee'],extension['username'],extension["email_assignee"],forwarded_number,saldo,btnDelete+ btnUpdate+ btnTopUp+ buttonOperator]).draw();
-		}
-		
+
 		let self = this;
 		$("[id^=\"id-delete-extension\"]").click(function (event) {
 			let idExtension = event.target.id.split("-")[3];
