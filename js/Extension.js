@@ -18,6 +18,7 @@ class Extension {
 	}
 
 	displayAllExtensions(data) {
+		var table = $('#tb').DataTable();
 		let number = 0;
 		let operatorEnabled = false
 		let buttonOperator = null
@@ -53,7 +54,7 @@ class Extension {
 				saldo = "Disabled"
 			}
 
-			var table = $('#tb').DataTable();
+			
 		
 		
 			let btnDelete = "<img id=\"id-delete-extension-" + extension["id_extension"] + "\" alt=\"Icon for deleting\" src=\"res/ic_trash.png\" style=\"width: 20px; margin-left: 5px;\">" ;
