@@ -30,7 +30,9 @@ $(document).ready(function () {
     GLOBAL.connection.getAllPbxs(function(data) {
         callog.displayAllPbxs(data);
     });
-
+    GLOBAL.connection.getCallLogData(null, null, 98, null, function (data) {
+        callog.displayCallLogData(data);
+    });
     var activities = document.getElementById("pbx-name");
     activities.addEventListener("change", function() {
         if(activities.value != "")
