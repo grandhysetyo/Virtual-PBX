@@ -38,9 +38,7 @@ $(document).ready(function () {
         if(activities.value != "")
         {            
             var idpbx = activities.options[activities.selectedIndex].value;            
-            GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-                EXTENSION.displayCallLogData(data);
-            });
+            alert(idpbx);
         }
         
     });
