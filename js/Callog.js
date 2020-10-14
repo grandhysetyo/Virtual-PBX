@@ -20,7 +20,7 @@ class Callog {
     displayCallLogData(data) {
 		var table = $('#tb').DataTable();
 		for (let callLog of data) {			
-            alert(callLog[0])    
+            table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],callLog[4],callLog[5]]).draw();    
 		}		
 	}
     
@@ -41,9 +41,6 @@ $(document).ready(function () {
             });
         }
         
-    });
-    GLOBAL.connection.getCallLogData(null, null, 98, null, function (data) {
-        callog.displayCallLogData(data);
     });
 });
 
