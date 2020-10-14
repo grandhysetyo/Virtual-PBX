@@ -42,5 +42,8 @@ $(document).ready(function () {
         }
         
     });
+    GLOBAL.connection.getCallLogData(null, null, 98, null, function (data) {
+        callog.displayCallLogData(data);
+    });
 });
 
