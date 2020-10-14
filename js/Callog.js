@@ -21,9 +21,7 @@ class Callog {
 		var table = $('#tb').DataTable();
 		for (let callLog of data) {			
             table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],callLog[4],callLog[5]]).draw();    
-		}
-		$('#callLogs').DataTable().draw();;
-
+		}		
 	}
     
 }
@@ -38,7 +36,9 @@ $(document).ready(function () {
         if(activities.value != "")
         {            
             var idpbx = activities.options[activities.selectedIndex].value;            
-            alert(idpbx);
+            GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
+                EXTENSION.displayCallLogData(data);
+            });
         }
         
     });
