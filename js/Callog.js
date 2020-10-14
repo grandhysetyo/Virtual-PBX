@@ -20,7 +20,7 @@ class Callog {
     displayCallLogData(data) {
 		var table = $('#tb').DataTable();
 		for (let callLog of data) {			
-            table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],callLog[4],callLog[5]]).draw();    
+            alert(callLog[0])    
 		}		
 	}
     
