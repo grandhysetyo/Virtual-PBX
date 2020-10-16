@@ -56,9 +56,16 @@ class Callog {
     savePDF(tableID) {
         // Choose the element that our invoice is rendered in.
         var tableSelect = document.getElementById(tableID);
+        var opt = {
+            margin:       1,
+            filename:     'callog-pbx.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+          };
         // Choose the element and save the PDF for our user.
         html2pdf()
-            .set({ html2canvas: { scale: 1 } })
+            .set(opt)
             .from(tableSelect)
             .save();
     }
