@@ -25,7 +25,7 @@ class Callog {
 		}		
     }
     
-    CreateReport(tableID, ReportName = ''){
+    saveExcel(tableID, ReportName = ''){
         var downloadLink;
         var dataType = 'application/vnd.ms-excel';
         var tableSelect = document.getElementById(tableID);
@@ -52,6 +52,15 @@ class Callog {
             downloadLink.click();
         }
     }
+
+    savePDF(tableID) {
+        // Choose the element that our invoice is rendered in.
+        var tableSelect = document.getElementById(tableID);
+        // Choose the element and save the PDF for our user.
+        html2pdf()
+          .from(element)
+          .save();
+    }
     
 }
 $(document).ready(function () {
@@ -71,6 +80,7 @@ $(document).ready(function () {
         }
         
     });
-    $("#save-excel").click(function (){ callog.CreateReport('tb'); });
+    $("#save-excel").click(function (){ callog.saveExcel('tb'); });
+    $("#save-pdf").click(function (){ callog.savePDF('tb'); });
 });
 
