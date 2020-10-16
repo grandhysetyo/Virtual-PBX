@@ -88,7 +88,7 @@ $(document).ready(function () {
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
     // $("#save-pdf").click(function (){ callog.savePDF('tb'); });
     $("#save-pdf").on("click", function() {
-        table.button( '.buttons-pdf' ).trigger();
+        $('.buttons-pdf').click()
     });
 });
 
