@@ -58,8 +58,9 @@ class Callog {
         var tableSelect = document.getElementById(tableID);
         // Choose the element and save the PDF for our user.
         html2pdf()
-          .from(tableSelect)
-          .save();
+            .set({ html2canvas: { scale: 4 } })
+            .from(tableSelect)
+            .save();
     }
     
 }
@@ -80,15 +81,9 @@ $(document).ready(function () {
         }
         
     });
-    var table = $('#tb').DataTable({
-        buttons: [{ 
-            extend: 'pdf',
-        }]
-    });    
+       
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
-    // $("#save-pdf").click(function (){ callog.savePDF('tb'); });
-    $("#save-pdf").on("click", function() {
-        $('.buttons-pdf').click()
-    });
+    $("#save-pdf").click(function (){ callog.savePDF('tb'); });
+    
 });
 
