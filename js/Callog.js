@@ -60,7 +60,7 @@ class Callog {
             margin:       1,
             filename:     'callog-pbx.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
+            html2canvas:  { scale: 4 },
             jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
           };
         // Choose the element and save the PDF for our user.
