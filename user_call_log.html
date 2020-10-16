@@ -276,10 +276,13 @@
             "paging":   true,
             "searching": false,
             "lengthChange": false,
-            "dom": Bfrtip,
-            "buttons": [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+            
+            } );
+            $('#tb').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
             } );
         } );
         
