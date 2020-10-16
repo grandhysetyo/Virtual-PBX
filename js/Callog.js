@@ -80,13 +80,11 @@ $(document).ready(function () {
         }
         
     });
-    
-    $('#tb').DataTable( {
-        dom: 'Bfrtip',
+    var table = $('#tb').DataTable({
         buttons: [{ 
             extend: 'pdf',
         }]
-    } );
+    });    
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
     // $("#save-pdf").click(function (){ callog.savePDF('tb'); });
     $("#save-pdf").on("click", function() {
