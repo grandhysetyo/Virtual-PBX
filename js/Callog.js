@@ -58,7 +58,7 @@ class Callog {
         var tableSelect = document.getElementById(tableID);
         // Choose the element and save the PDF for our user.
         html2pdf()
-            .set({ html2canvas: { scale: 4 } })
+            .set({ html2canvas: { scale: 1 } })
             .from(tableSelect)
             .save();
     }
