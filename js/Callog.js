@@ -23,7 +23,35 @@ class Callog {
 		for (let callLog of data) {			
             table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],callLog[6],callLog[4],callLog[5]]).draw();    
 		}		
-	}
+    }
+    
+    CreateReport(tableID, ReportName = ''){
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+        ReportName = ReportName?ReportName+'.xls':''+'EmployeeName.xls';//modify excle sheet name here 
+        
+        // Create download link element
+        downloadLink = document.createElement("a");
+        document.body.appendChild(downloadLink);
+        
+        if(navigator.msSaveOrOpenBlob){
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob( blob, ReportName);
+        }else{
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+        
+            // Setting the file name
+            downloadLink.download = ReportName;
+            
+            //triggering the function
+            downloadLink.click();
+        }
+    }
     
 }
 $(document).ready(function () {
@@ -43,5 +71,6 @@ $(document).ready(function () {
         }
         
     });
+    $("#save-excel").click(function (){ callog.CreateReport('tb'); });
 });
 
