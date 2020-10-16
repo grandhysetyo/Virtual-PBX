@@ -80,7 +80,17 @@ $(document).ready(function () {
         }
         
     });
+    
+    $('#tb').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [{ 
+            extend: 'csv','excel',
+        }]
+    } );
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
-    $("#save-pdf").click(function (){ callog.savePDF('tb'); });
+    // $("#save-pdf").click(function (){ callog.savePDF('tb'); });
+    $("#save-pdf").on("click", function() {
+        table.button( '.buttons-pdf' ).trigger();
+    });
 });
 
