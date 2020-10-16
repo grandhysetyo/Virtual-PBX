@@ -84,7 +84,7 @@ $(document).ready(function () {
     $('#tb').DataTable( {
         dom: 'Bfrtip',
         buttons: [{ 
-            extend: 'csv','excel',
+            extend: 'pdf',
         }]
     } );
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
