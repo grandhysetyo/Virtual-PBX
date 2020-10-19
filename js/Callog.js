@@ -50,7 +50,7 @@ class Callog {
         var dataType = 'application/vnd.ms-excel';
         var tableSelect = document.getElementById(tableID);
         var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
-        ReportName = ReportName?ReportName+'.xls':''+'EmployeeName.xls';//modify excle sheet name here 
+        ReportName = ReportName?ReportName+'.xls':''+'call-log.xls';//modify excle sheet name here 
         
         // Create download link element
         downloadLink = document.createElement("a");
