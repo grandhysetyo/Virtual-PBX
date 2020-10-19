@@ -104,13 +104,9 @@ $(document).ready(function () {
             var idpbx = activities.options[activities.selectedIndex].value;            
             GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
                 callog.displayCallLogData(data);
-            });
-            GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
                 callog.displayExtensionPbxs(data);
-            });
-            GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
                 callog.displayStatusExt(data);
-            });
+            });            
         }
         
     });
