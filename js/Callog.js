@@ -42,12 +42,16 @@ class Callog {
     displayCallLogData(data,callerId,dateRange) {
         var table = $('#tb').DataTable();
         table.clear().draw();
-		for (let callLog of data) {	
-            
-            var billing = Math.floor(callLog[3]/10)*100;
+		for (let callLog of data) {	            
+            var billing = 0;
+            if (callog[4]=="ANSWER"){
+                billing = Math.floor(callLog[3]/10)*100
+            }
+
             if(callerId!='' || dateRange!=''){
+                alert("S");
                 if (callerId==callLog[2]) {
-                    alert("S");
+                    
                     table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
                 }
             }else{
@@ -128,8 +132,7 @@ $(document).ready(function () {
         var dateRange = $('#daterange').val();        
         var idpbx = activities.options[activities.selectedIndex].value;         
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-            callog.displayCallLogData(data,callerId,dateRange);         
-            alert("HHH");   
+            callog.displayCallLogData(data,callerId,dateRange);                     
         });
     });
        
