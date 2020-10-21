@@ -18,17 +18,19 @@ class Callog {
     }
 
     displayExtensionPbxs(data) {
-		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+        // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+        $("#callerid").empty();
 		for (let callLog of data) {
 			let formattedPbx;
 			formattedPbx = "<option value='"+callLog[1]+"'>"+ callLog[1] +"</option>"
-			$("#ext-pbx").append(formattedPbx);
+			$("#callerid").append(formattedPbx);
 		}
 		
     }
 
     displayStatusExt(data) {
-		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+        // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
+        $("#status-call").empty();
 		for (let callLog of data) {
 			let formattedPbx;
 			formattedPbx = "<option value='"+callLog[5]+"'>"+ callLog[5] +"</option>"
