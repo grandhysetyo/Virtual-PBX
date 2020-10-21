@@ -42,7 +42,7 @@ class Callog {
         table.clear().draw();
 		for (let callLog of data) {	
             
-            var billing = int(callLog[3]/10)*100;
+            var billing = Math.floor(callLog[3]/10)*100;
             if(callerId!='' || dateRange!=''){
                 if (callerId==callLog[2]) {
                     alert("S")
