@@ -44,14 +44,12 @@ class Callog {
         table.clear().draw();
 		for (let callLog of data) {	            
             var billing = 0;
-            if (callLog[4]=="ANSWER"){
+            if (callLog[4]=="ANSWERED"){
                 billing = Math.floor(callLog[3]/10)*100;
             }
 
-            if(callerId!='' || dateRange!=''){
-                alert("S");
-                if (callerId==callLog[2]) {
-                    
+            if(callerId!='' || dateRange!=''){                
+                if (callerId==callLog[1]) {                    
                     table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
                 }
             }else{
