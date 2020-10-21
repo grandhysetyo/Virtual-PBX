@@ -120,6 +120,7 @@ $(document).ready(function () {
             var idpbx = activities.options[activities.selectedIndex].value; 
             var dateRange = '';
             var callerId = '';
+            var statusExt = '';
             GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
                 callog.displayCallLogData(data,callerId,statusExt,dateRange);
                 callog.displayExtensionPbxs(data);
