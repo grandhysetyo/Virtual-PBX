@@ -44,7 +44,7 @@ class Callog {
         table.clear().draw();
 		for (let callLog of data) {	            
             var billing = 0;
-            if (callog[4]=="ANSWER"){
+            if (calLog[4]=="ANSWER"){
                 billing = Math.floor(callLog[3]/10)*100;
             }
 
