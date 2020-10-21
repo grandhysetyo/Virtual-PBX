@@ -37,13 +37,20 @@ class Callog {
 		
     }
 
-    displayCallLogData(data) {
+    displayCallLogData(data,callerId,dateRange) {
         var table = $('#tb').DataTable();
         table.clear().draw();
 		for (let callLog of data) {	
-            var billing = (callLog[3]/10)*100
             
-            table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();    
+            var billing = int(callLog[3]/10)*100;
+            if(callerId!='' || dateRange!=''){
+                if (callerId==callLog[2]) {
+                    alert("S")
+                    table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
+                }
+            }else{
+                table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();    
+            }
 		}		
     }
     
@@ -103,14 +110,24 @@ $(document).ready(function () {
     activities.addEventListener("change", function() {
         if(activities.value != "")
         {            
-            var idpbx = activities.options[activities.selectedIndex].value;            
+            var idpbx = activities.options[activities.selectedIndex].value; 
+            var dateRange = '';
+            var callerId = '';
             GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-                callog.displayCallLogData(data);
+                callog.displayCallLogData(data,callerId,dateRange);
                 callog.displayExtensionPbxs(data);
                 callog.displayStatusExt(data);
             });            
         }
         
+    });
+    $('#filter').click(function(){
+        var callerId = $('#callerId').val();
+        var dateRange = $('#dateRange').val();
+        var idpbx = activities.options[activities.selectedIndex].value; 
+        GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
+            callog.displayCallLogData(data,callerId,dateRange);            
+        });
     });
        
     $("#save-excel").click(function (){ callog.saveExcel('tb'); });
