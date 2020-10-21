@@ -19,7 +19,7 @@ class Callog {
 
     displayExtensionPbxs(data) {
         // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
-        $("#callerid").empty();
+        // $("#callerid").empty();
 		for (let callLog of data) {
 			let formattedPbx;
 			formattedPbx = "<option value='"+callLog[1]+"'>"+ callLog[1] +"</option>"
@@ -30,7 +30,7 @@ class Callog {
 
     displayStatusExt(data) {
         // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
-        $("#status-call").empty();
+        // $("#status-call").empty();
 		for (let callLog of data) {
 			let formattedPbx;
 			formattedPbx = "<option value='"+callLog[4]+"'>"+ callLog[4] +"</option>"
