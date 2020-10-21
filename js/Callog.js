@@ -33,13 +33,13 @@ class Callog {
         $("#status-call").empty();
 		for (let callLog of data) {
 			let formattedPbx;
-			formattedPbx = "<option value='"+callLog[5]+"'>"+ callLog[5] +"</option>"
+			formattedPbx = "<option value='"+callLog[4]+"'>"+ callLog[4] +"</option>"
 			$("#status-call").append(formattedPbx);
 		}
 		
     }
 
-    displayCallLogData(data,callerId,dateRange) {
+    displayCallLogData(data,callerId,statusExt,dateRange) {
         var table = $('#tb').DataTable();
         table.clear().draw();
 		for (let callLog of data) {	            
@@ -48,8 +48,11 @@ class Callog {
                 billing = Math.floor(callLog[3]/10)*100;
             }
 
-            if(callerId!='' || dateRange!=''){                
+            if(callerId!='' || dateRange!='' || statusExt!=''){                
                 if (callerId==callLog[1]) {                    
+                    table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
+                }
+                else if(statusExt==callLog[4]){ 
                     table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
                 }
             }else{
@@ -118,7 +121,7 @@ $(document).ready(function () {
             var dateRange = '';
             var callerId = '';
             GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-                callog.displayCallLogData(data,callerId,dateRange);
+                callog.displayCallLogData(data,callerId,statusExt,dateRange);
                 callog.displayExtensionPbxs(data);
                 callog.displayStatusExt(data);
             });            
@@ -127,10 +130,11 @@ $(document).ready(function () {
     });
     $('#filter').click(function(){
         var callerId = $('#callerid').val();
+        var statusExt = $('#status-ext').val();
         var dateRange = $('#daterange').val();        
         var idpbx = activities.options[activities.selectedIndex].value;         
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-            callog.displayCallLogData(data,callerId,dateRange);                     
+            callog.displayCallLogData(data,callerId,statusExt,dateRange);                     
         });
     });
        
