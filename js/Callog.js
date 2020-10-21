@@ -47,7 +47,7 @@ class Callog {
             var billing = Math.floor(callLog[3]/10)*100;
             if(callerId!='' || dateRange!=''){
                 if (callerId==callLog[2]) {
-                    alert("S")
+                    alert("S");
                     table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
                 }
             }else{
@@ -125,8 +125,9 @@ $(document).ready(function () {
     });
     $('#filter').click(function(){
         var callerId = $('#callerid').val();
-        var dateRange = $('#daterange').val();
+        var dateRange = $('#daterange').val();        
         var idpbx = activities.options[activities.selectedIndex].value; 
+        alert("S");
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
             callog.displayCallLogData(data,callerId,dateRange);            
         });
