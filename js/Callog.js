@@ -126,10 +126,10 @@ $(document).ready(function () {
     $('#filter').click(function(){
         var callerId = $('#callerid').val();
         var dateRange = $('#daterange').val();        
-        var idpbx = activities.options[activities.selectedIndex].value; 
-        alert("S");
+        var idpbx = activities.options[activities.selectedIndex].value;         
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
-            callog.displayCallLogData(data,callerId,dateRange);            
+            callog.displayCallLogData(data,callerId,dateRange);         
+            alert("HHH");   
         });
     });
        
