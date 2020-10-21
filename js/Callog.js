@@ -45,7 +45,7 @@ class Callog {
 		for (let callLog of data) {	            
             var billing = 0;
             if (callog[4]=="ANSWER"){
-                billing = Math.floor(callLog[3]/10)*100
+                billing = Math.floor(callLog[3]/10)*100;
             }
 
             if(callerId!='' || dateRange!=''){
