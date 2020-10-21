@@ -49,12 +49,9 @@ class Callog {
             }
 
             if(callerId!='' || dateRange!='' || statusExt!=''){                
-                if (callerId==callLog[1]) {                    
+                if (callerId==callLog[1] || statusExt==callLog[4]) {                    
                     table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
-                }
-                else if(statusExt==callLog[4]){ 
-                    table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();        
-                }
+                }                
             }else{
                 table.row.add([callLog[0],callLog[1],callLog[2],callLog[3],billing,callLog[4],callLog[5]]).draw();    
             }
