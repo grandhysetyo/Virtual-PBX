@@ -122,8 +122,8 @@ $(document).ready(function () {
         
     });
     $('#filter').click(function(){
-        var callerId = $('#callerId').val();
-        var dateRange = $('#dateRange').val();
+        var callerId = $('#callerid').val();
+        var dateRange = $('#daterange').val();
         var idpbx = activities.options[activities.selectedIndex].value; 
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
             callog.displayCallLogData(data,callerId,dateRange);            
