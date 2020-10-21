@@ -128,7 +128,7 @@ $(document).ready(function () {
     });
     $('#filter').click(function(){
         var callerId = $('#callerid').val();
-        var statusExt = $('#status-ext').val();
+        var statusExt = $('#status-call').val();
         var dateRange = $('#daterange').val();        
         var idpbx = activities.options[activities.selectedIndex].value;         
         GLOBAL.connection.getCallLogData(null, null, idpbx, null, function (data) {
