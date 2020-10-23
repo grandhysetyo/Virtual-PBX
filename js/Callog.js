@@ -11,19 +11,29 @@ class Callog {
 		// let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
 		for (let pbx of data) {
 			let formattedPbx;
-			formattedPbx = "<option value='"+pbx["id_pbx"]+"'>"+ pbx["pbx_name"] +"</option>"
-			$("#pbx-name").append(formattedPbx);
+			formattedPbx = "<option value='"+pbx["id_pbx"]+"'>"+ pbx["pbx_name"] +"</option>"            
+            $("#pbx-name").append(formattedPbx);
 		}
 		
     }
 
     displayExtensionPbxs(data) {
         // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
-        // $("#callerid").empty();
-		for (let callLog of data) {
+        // $("#callerid").empty();    
+        var arr = [];
+		for (let callLog of data){
+            arr.push(callLog[1]);
+		}
+		var filteredArray = arr.filter(function(item, pos){
+		  return arr.indexOf(item)== pos; 
+        });
+            
+		for (let callLog of filteredArray) {
 			let formattedPbx;
-			formattedPbx = "<option value='"+callLog[1]+"'>"+ callLog[1] +"</option>"
-			$("#callerid").append(formattedPbx);
+            formattedPbx = "<option value='"+callLog+"'>"+ callLog +"</option>"
+                        
+            $("#callerid").append(formattedPbx);
+            			
 		}
 		
     }
@@ -31,9 +41,17 @@ class Callog {
     displayStatusExt(data) {
         // let role = this.storage.get(Constant.STORAGE_KEY_USER_TYPE);
         // $("#status-call").empty();
-		for (let callLog of data) {
+		var arr = [];
+		for (let callLog of data){
+            arr.push(callLog[4]);
+		}
+		var filteredArray = arr.filter(function(item, pos){
+		  return arr.indexOf(item)== pos; 
+		});
+		
+		for (let callLog of filteredArray) {
 			let formattedPbx;
-			formattedPbx = "<option value='"+callLog[4]+"'>"+ callLog[4] +"</option>"
+			formattedPbx = "<option value='"+callLog+"'>"+ callLog +"</option>"
 			$("#status-call").append(formattedPbx);
 		}
 		
